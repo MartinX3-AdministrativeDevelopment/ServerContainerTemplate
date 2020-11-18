@@ -7,7 +7,8 @@ HTTPS support
 
 ### Project requirements
 - [Arch Linux Server](../base-arch-linux/README.md)
-- [Camunda BPM Platform](camunda-bpm-platform/README.md)
+- [Camunda BPM Platform](../camunda-bpm-platform/README.md)
+- [Gitlab](../gitlab/README.md)
 
 ### Installation instructions
 1. [Installation](https://github.com/MartinX3-EducationOrganization/nginx-certbot/tree/MartinX3/server-docker-compose)
