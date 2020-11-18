@@ -1,0 +1,3 @@
+# Updates the dyndns entry of your domain with the corect public IP
+[Service]
+ExecStart=curl -6 https://example.com/exampleValue

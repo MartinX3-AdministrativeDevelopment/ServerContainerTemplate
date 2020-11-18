@@ -1,0 +1,9 @@
+[Unit]
+Description=Updates the package database and shows the result in the motd
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=timers.target

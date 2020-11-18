@@ -1,0 +1,8 @@
+[Unit]
+Description=Updates the dyndns entry of your domain with the corect public IP
+
+[Timer]
+OnUnitActiveSec=5min
+
+[Install]
+WantedBy=timers.target
