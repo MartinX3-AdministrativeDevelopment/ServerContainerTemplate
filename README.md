@@ -18,3 +18,5 @@ Creating and using a docker-compose server
     1. [Camunda BPM Platform](docker-container/services/camunda-bpm-platform/README.md)
     1. [Gitlab](docker-container/services/gitlab/README.md)
     1. [HTTPS](docker-container/services/https/README.md)
+1. Docker-Compose maintenance services
+    1. [Watchtower](docker-container/maintenance/watchtower/README.md)

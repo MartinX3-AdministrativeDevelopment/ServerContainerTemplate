@@ -1,15 +1,15 @@
 # Description
 
-A postgresql database
+A docker image version checker
 
 ## Table of contents
 
-1. [Project requirements](#project-requirements)
+1. [Service requirements](#service-requirements)
 1. [Installation instructions](#installation-instructions)
 
-### Project requirements
+### Service requirements
 
-- [Arch Linux Server](../https/README.md)
+- [Server](../../../base/operating-system)
 
 ### Installation instructions
 
