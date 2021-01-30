@@ -1,0 +1,9 @@
+[Unit]
+Description=Prune unused dockerimages/-tags to free up disk space
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=timers.target

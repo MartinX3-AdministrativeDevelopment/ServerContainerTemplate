@@ -30,6 +30,7 @@ Universal maintenance tips
 ### Maintenance Tips
 
 1. Bash autocompletion
+1. [Prune unused dockerimages/-tags to free up disk space](examples/docker/prune)
 1. Displaying information & updatable packages on (ssh) login
     1. [Example motd generation files.](examples/motd)
         1. Needs package `lm_sensors`
