@@ -1,4 +1,5 @@
 #!/bin/bash
+# /usr/local/bin/update_motd.sh
 #Script to update MOTD_FILE with relevant information.
 
 #Color variables

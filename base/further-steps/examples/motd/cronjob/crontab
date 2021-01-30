@@ -1,0 +1,4 @@
+# Add to /etc/crontab
+
+# Updates the dyndns entry of your domain with the correct public IP
+0 0 * * * /usr/local/bin/update_motd.sh

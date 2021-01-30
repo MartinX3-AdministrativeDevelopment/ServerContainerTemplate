@@ -1,3 +1,4 @@
 # Updates the package database and shows the result in the motd
+
 [Service]
 ExecStart=/usr/local/bin/update_motd.sh

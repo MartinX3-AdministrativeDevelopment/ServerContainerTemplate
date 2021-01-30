@@ -7,6 +7,7 @@ Creating and using a docker-compose server
 1. Base
     1. Operating System
         - [Arch Linux Server](base/operating-system/linux-arch/README.md)
+    1. [Further Steps](base/further-steps/README.md)
 1. Docker-Compose services
     1. `docker network create nginx-certbot_default`  
        Automatically created by the HTTPS step and will be used by the other containers.  
