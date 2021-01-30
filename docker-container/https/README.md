@@ -9,7 +9,7 @@ HTTPS support
 
 ### Project requirements
 
-- [Arch Linux Server](../base-linux-arch/README.md)
+- [Arch Linux Server](../../base/operating-system/linux-arch/README.md)
 - [Camunda BPM Platform](../camunda-bpm-platform/README.md)
 - [Gitlab](../gitlab/README.md)
 

@@ -53,7 +53,7 @@ Creating an arch linux server for Docker Compose
 1. [Arch Wiki](https://wiki.archlinux.org/index.php/System_maintenance)
 1. Displaying informations & updateable packages on (ssh) login
     1. `pacman -S lm_sensors`
-    1. [Example systemD motd generation files.](examples/motd/)
+    1. [Example systemD motd generation files.](examples/motd)
     1. Push them to `/etc/systemd/system/`
     1. Enable the timer with `systemctl enable motd.timer && systemctl start motd.timer`
 1. [Displaying open updates on a dashboard for your servers](https://github.com/furlongm/patchman)
