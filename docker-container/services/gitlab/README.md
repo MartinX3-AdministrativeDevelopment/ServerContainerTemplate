@@ -4,14 +4,14 @@ A gitlab server
 
 ### Table of contents
 
-1. [Project requirements](#project-requirements)
+1. [Service requirements](#service-requirements)
 1. [Installation instructions](#installation-instructions)
 1. [Usage](#usage)
 1. [Links](#links)
 
-#### Project requirements
+#### Service requirements
 
-- [Arch Linux Server](../https/README.md)
+- [Server](../../../base/operating-system)
 
 #### Installation instructions
 

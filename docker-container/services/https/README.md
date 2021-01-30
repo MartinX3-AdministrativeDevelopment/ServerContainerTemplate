@@ -4,14 +4,13 @@ HTTPS support
 
 ## Table of contents
 
-1. [Project requirements](#project-requirements)
+1. [Service requirements](#service-requirements)
 1. [Installation instructions](#installation-instructions)
 
-### Project requirements
+### Service requirements
 
-- [Arch Linux Server](../../base/operating-system/linux/arch/README.md)
-- [Camunda BPM Platform](../camunda-bpm-platform/README.md)
-- [Gitlab](../gitlab/README.md)
+- [Server](../../../base/operating-system)
+- The services using this service
 
 ### Installation instructions
 
