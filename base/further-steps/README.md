@@ -25,7 +25,8 @@ Universal maintenance tips
 
 #### Docker Compose
 
-1. [Installation](https://docs.docker.com/compose/)
+- [Installation](https://docs.docker.com/compose/)
+- [Installation Rootless (Security)](https://docs.docker.com/engine/security/rootless/)
 
 ### Maintenance Tips
 
@@ -39,5 +40,8 @@ Universal maintenance tips
 
 #### Security Tips
 
+1. [Docker Wiki](https://docs.docker.com/)
+1. [Docker Security](https://docs.docker.com/engine/security/)
+1. [Docker Secrets](https://docs.docker.com/engine/swarm/secrets/)
 1. [Generate SSL config](https://ssl-config.mozilla.org/)
 1. [Test Website security](https://www.ssllabs.com/ssltest/)
