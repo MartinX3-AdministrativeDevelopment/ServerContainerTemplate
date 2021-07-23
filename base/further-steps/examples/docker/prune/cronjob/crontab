@@ -1,4 +1,0 @@
-# Add to /etc/crontab
-
-# Prune unused dockerimages/-tags to free up disk space
-0 0 * * * /usr/bin/docker system prune -f

@@ -1,0 +1,3 @@
+#/etc/crontab
+# Prune unused dockerimages/-tags to free up disk space
+0 0 * * * /usr/bin/podman system prune -f
