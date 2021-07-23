@@ -67,4 +67,5 @@ Podman is compatible to it. use it only if you get problems with podman compose.
 1. [Docker Security](https://docs.docker.com/engine/security/)
 1. [Docker Secrets](https://docs.docker.com/engine/swarm/secrets/)
 1. [Generate SSL config](https://ssl-config.mozilla.org/)
-1. [Test Website security](https://www.ssllabs.com/ssltest/)
+1. [Test website for security](https://www.ssllabs.com/ssltest/)
+1. [Further test websites for security](https://geekflare.com/de/ssl-test-certificate/)
