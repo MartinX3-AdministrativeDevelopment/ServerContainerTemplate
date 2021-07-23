@@ -1,8 +1,11 @@
+#/etc/systemd/system/dyndns.timer
 [Unit]
-Description=Updates the dyndns entry of your domain with the correct public IP
+Description=DynDNS update for freedns.afraid.org
 
 [Timer]
-OnUnitActiveSec=5min
+OnBootSec=2min
+OnCalendar=*:0/7
+Persistent=true
 
 [Install]
 WantedBy=timers.target

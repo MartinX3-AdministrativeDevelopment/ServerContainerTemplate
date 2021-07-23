@@ -1,3 +1,8 @@
-# Updates the dyndns entry of your domain with the corect public IP
+#/etc/systemd/system/dyndns.service
+[Unit]
+Description=DynDNS update
+
 [Service]
-ExecStart=curl -6 https://example.com/exampleValue
+Type=oneshot
+ExecStart=/usr/bin/curl -s https://sync.afraid.org/u/YourSecretIPv4Token/
+ExecStart=/usr/bin/curl -s https://v6.sync.afraid.org/u/YourSecretIPv6Token/
