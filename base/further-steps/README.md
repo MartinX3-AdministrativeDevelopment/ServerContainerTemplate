@@ -56,8 +56,6 @@ Podman is compatible to it. use it only if you get problems with podman compose.
 4. Displaying information & updatable packages on (ssh) login
     1. [Example motd generation files.](examples/motd)
         1. Needs package `lm_sensors`
-5. [Displaying open updates on a dashboard for your servers](https://github.com/furlongm/patchman)
-6. [Monitoring server health](https://github.com/mikaku/Monitorix)
 
 #### Security Tips
 
