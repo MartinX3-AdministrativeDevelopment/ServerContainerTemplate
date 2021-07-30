@@ -51,12 +51,13 @@ Podman is compatible to it. use it only if you get problems with podman compose.
 ### Maintenance Tips
 
 1. Bash autocompletion
-1. [Prune unused dockerimages/-tags to free up disk space](examples/podman/prune)
-1. Displaying information & updatable packages on (ssh) login
+2. [Health status of the storage](https://wiki.archlinux.org/title/S.M.A.R.T.)
+3. [Prune unused dockerimages/-tags to free up disk space](examples/podman/prune)
+4. Displaying information & updatable packages on (ssh) login
     1. [Example motd generation files.](examples/motd)
         1. Needs package `lm_sensors`
-1. [Displaying open updates on a dashboard for your servers](https://github.com/furlongm/patchman)
-1. [Monitoring server health](https://github.com/mikaku/Monitorix)
+5. [Displaying open updates on a dashboard for your servers](https://github.com/furlongm/patchman)
+6. [Monitoring server health](https://github.com/mikaku/Monitorix)
 
 #### Security Tips
 
