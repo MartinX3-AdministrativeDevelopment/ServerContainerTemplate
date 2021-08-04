@@ -52,8 +52,14 @@ Podman is compatible to it. use it only if you get problems with podman compose.
 
 1. Bash autocompletion
 2. [Health status of the storage](https://wiki.archlinux.org/title/S.M.A.R.T.)
-3. [Prune unused dockerimages/-tags to free up disk space](examples/podman/prune)
-4. Displaying information & updatable packages on (ssh) login
+    1. Automatic email if problems happen
+3. [RAID health](https://wiki.archlinux.org/title/RAID#RAID_Maintenance)
+    1. Automatic email if problems happen
+    2. Prefer filesystem native RAID support like RAID 1 on BTRFS
+4. Filesystem health (Example [BTRFS](https://wiki.archlinux.org/title/btrfs) & [btrfsmaintenance](https://aur.archlinux.org/packages/btrfsmaintenance/))
+    1. Automatic email if problems happen
+5. [Prune unused dockerimages/-tags to free up disk space](examples/podman/prune)
+6. Displaying information & updatable packages on (ssh) login
     1. [Example motd generation files.](examples/motd)
         1. Needs package `lm_sensors`
 
