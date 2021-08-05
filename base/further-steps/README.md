@@ -17,13 +17,13 @@ Universal maintenance tips
 
 ### Firewall
 
-- UFW
+- [UFW](https://wiki.archlinux.org/title/Uncomplicated_Firewall)
     - Easy to maintain with its config files
     - It has a rate limit which makes sshguard / fail2ban useless for most cases
 
 #### SSH
 
-- OpenSSH
+- [OpenSSH](https://wiki.archlinux.org/title/OpenSSH)
 
 #### DynDNS
 
