@@ -16,8 +16,10 @@ Universal maintenance tips
 ### Installation instructions
 
 ### Firewall
+
 - UFW
-  - Easy to maintain with its config files 
+    - Easy to maintain with its config files
+    - It has a rate limit which makes sshguard / fail2ban useless for most cases
 
 #### SSH
 
@@ -30,8 +32,8 @@ Universal maintenance tips
 
 #### Podman
 
-Successor of docker. Compatible to docker. Better security. Designed to run rootless.
-Has a docker API layer with the podman-docker package.
+Successor of docker. Compatible to docker. Better security. Designed to run rootless. Has a docker API layer with the
+podman-docker package.
 
 - [Installation](https://podman.io/)
 - [Podman Rootless](https://github.com/containers/podman/blob/main/docs/tutorials/rootless_tutorial.md)
@@ -59,7 +61,8 @@ Podman is compatible to it. use it only if you get problems with podman compose.
 3. [RAID health](https://wiki.archlinux.org/title/RAID#RAID_Maintenance)
     1. Automatic email if problems happen
     2. Prefer filesystem native RAID support like RAID 1 on BTRFS
-4. Filesystem health (Example [BTRFS](https://wiki.archlinux.org/title/btrfs) & [btrfsmaintenance](https://aur.archlinux.org/packages/btrfsmaintenance/))
+4. Filesystem health (Example [BTRFS](https://wiki.archlinux.org/title/btrfs)
+   & [btrfsmaintenance](https://aur.archlinux.org/packages/btrfsmaintenance/))
     1. Automatic email if problems happen
 5. [Prune unused dockerimages/-tags to free up disk space](examples/podman/prune)
 6. Displaying information & updatable packages on (ssh) login
