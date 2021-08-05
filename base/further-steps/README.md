@@ -15,10 +15,13 @@ Universal maintenance tips
 
 ### Installation instructions
 
+### Firewall
+- UFW
+  - Easy to maintain with its config files 
+
 #### SSH
 
 - OpenSSH
-- Secure_Shell
 
 #### DynDNS
 
