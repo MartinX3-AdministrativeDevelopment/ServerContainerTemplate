@@ -19,11 +19,22 @@ Universal maintenance tips
 
 - [UFW](https://wiki.archlinux.org/title/Uncomplicated_Firewall)
     - Easy to maintain with its config files
-    - It has a rate limit which makes sshguard / fail2ban useless for most cases
+    - It has a rate limit which makes sshguard / fail2ban useless for most cases, especially since they are vulnerable
+      to a spoofed source header.
 
 #### SSH
 
 - [OpenSSH](https://wiki.archlinux.org/title/OpenSSH)
+    - ```bash
+      # /etc/ufw/applications.d/OpenSSH
+      [OpenSSH]
+      title=OpenSSH
+      description=SSH access
+      ports=22/tcp|22/udp # Your custom ssh port.
+      ```
+    - ```bash
+      # ufw allow OpenSSH && ufw limit OpenSSH
+      ```
 
 #### DynDNS
 
