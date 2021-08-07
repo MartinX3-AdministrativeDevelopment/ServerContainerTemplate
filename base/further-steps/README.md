@@ -79,6 +79,7 @@ Podman is compatible to it. Use it only if you get problems with podman compose.
 6. Displaying information & updatable packages on (ssh) login
     1. [Example motd generation files.](examples/motd)
         1. Needs package `lm_sensors`
+7. Use a [Podman Cockpit UI](https://github.com/cockpit-project/cockpit-podman)
 
 #### Security Tips
 
