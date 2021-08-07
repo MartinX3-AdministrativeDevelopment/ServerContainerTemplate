@@ -48,7 +48,7 @@ podman-docker package.
 
 - [Installation](https://podman.io/)
 - [Podman Rootless](https://github.com/containers/podman/blob/main/docs/tutorials/rootless_tutorial.md)
-- `systemctl --user enable podman.socket --now`
+- `reboot`
 
 #### Podman Compose
 
