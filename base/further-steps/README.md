@@ -9,7 +9,7 @@ Universal maintenance tips
     1. [DynDNS](#dyndns)
     1. [Podman](#podman)
     1. [Podman Compose](#podman-compose)
-    1. [Docker Compose](#docker-compose)
+    1. [Docker Compose (Avoid it if you can)](#docker-compose)
 1. [Maintenance Tips](#maintenance-tips)
 1. [Security Tips](#security-tips)
 
@@ -58,7 +58,7 @@ Docker compose replacement for podman.
 
 #### Docker Compose
 
-Podman is compatible to it. use it only if you get problems with podman compose.
+Podman is compatible to it. Use it only if you get problems with podman compose.
 
 - [Installation](https://docs.docker.com/compose/)
 - [Installation Rootless (Security)](https://docs.docker.com/engine/security/rootless/)
