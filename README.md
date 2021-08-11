@@ -15,8 +15,6 @@ Creating and using a docker-compose server
        Since we need to have the other services up before running the HTTPS container, these containers need the
        network, we need to create it first.
     1. [Postgresql Database](docker-container/services/db-postgresql/README.md)
-    1. [Camunda BPM Platform](docker-container/services/camunda-bpm-platform/README.md)
-    1. [Gitlab](docker-container/services/gitlab/README.md)
     1. [HTTPS](docker-container/services/https/README.md)
 1. Docker-Compose maintenance services
     1. [Watchtower](docker-container/maintenance/watchtower/README.md)
