@@ -13,4 +13,4 @@ A docker image version checker
 
 ### Installation instructions
 
-1. `docker-compose up -d`
+1. `podman-Compose up -d`
