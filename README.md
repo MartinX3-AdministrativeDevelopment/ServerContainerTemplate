@@ -1,6 +1,6 @@
 # Description
 
-Creating and using a podman-Compose server
+Creating and using a podman-compose server
 
 ## Table of contents
 

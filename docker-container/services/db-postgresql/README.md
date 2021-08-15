@@ -13,4 +13,4 @@ A postgresql database
 
 ### Installation instructions
 
-1. `podman-Compose up -d`
+1. `podman-compose up -d`
