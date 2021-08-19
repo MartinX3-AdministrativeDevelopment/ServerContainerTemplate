@@ -18,5 +18,4 @@ networks:
   my-network:
 
 
-  # TODO
-  # https://directory.fedoraproject.org/docs/389ds/howto/howto-install-389.html
+  # TODO https://directory.fedoraproject.org/docs/389ds/howto/howto-install-389.html
