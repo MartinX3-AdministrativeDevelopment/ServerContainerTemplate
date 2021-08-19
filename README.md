@@ -1,6 +1,6 @@
 # Description
 
-Creating and using a podman-compose server
+Creating and using a podman server
 
 ## Table of contents
 
@@ -9,10 +9,10 @@ Creating and using a podman-compose server
         - [Arch Linux Server](base/operating-system/linux/arch/README.md)
         - [Alpine Linux Server](base/operating-system/linux/alpine/README.md)
     1. [Further Steps](base/further-steps/README.md)
-1. Podman-Compose services
+2. Podman services
     1. `podman network create my-network`
-    2. [HTTPS](docker-container/services/https/README.md)
-    3. [LDAP](docker-container/services/ldap/README.md)
-    4. [Postgresql Database](docker-container/services/db-postgresql/README.md)
-1. Podman-Compose maintenance services
-    1. [Watchtower](docker-container/maintenance/watchtower/README.md)
+    2. [HTTPS](container/services/https/README.md)
+    3. [LDAP](container/services/ldap/README.md)
+    4. [Postgresql Database](container/services/db-postgresql/README.md)
+3. Podman maintenance services
+    1. [Watchtower](container/maintenance/watchtower/README.md)
