@@ -11,7 +11,8 @@ Creating and using a podman-compose server
     1. [Further Steps](base/further-steps/README.md)
 1. Podman-Compose services
     1. `podman network create my-network`
-    1. [Postgresql Database](docker-container/services/db-postgresql/README.md)
-    1. [HTTPS](docker-container/services/https/README.md)
+    2. [HTTPS](docker-container/services/https/README.md)
+    3. [LDAP](docker-container/services/ldap/README.md)
+    4. [Postgresql Database](docker-container/services/db-postgresql/README.md)
 1. Podman-Compose maintenance services
     1. [Watchtower](docker-container/maintenance/watchtower/README.md)

@@ -10,7 +10,6 @@ HTTPS support
 ### Service requirements
 
 - [Server](../../../base/operating-system)
-- The services using this service
 
 ### Installation instructions
 

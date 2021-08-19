@@ -1,6 +1,6 @@
 # Description
 
-A postgresql database
+A LDAP server using 389 DS
 
 ## Table of contents
 
@@ -9,7 +9,7 @@ A postgresql database
 
 ### Service requirements
 
-- [LDAP](../ldap/README.md)
+- [TLS Certificate](../https/README.md)
 
 ### Installation instructions
 

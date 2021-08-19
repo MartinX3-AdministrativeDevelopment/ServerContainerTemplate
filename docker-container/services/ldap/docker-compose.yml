@@ -1,0 +1,22 @@
+version: '3.9'
+services:
+  ldap:
+    image: docker.io/389ds/dirsrv:2.0
+    restart: always
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    networks:
+      - my-network
+    volumes:
+      - data-ldap:/data
+volumes:
+  data-ldap:
+    driver: local
+networks:
+  my-network:
+
+
+  # TODO
+  # https://directory.fedoraproject.org/docs/389ds/howto/howto-install-389.html
