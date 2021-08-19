@@ -16,3 +16,6 @@ Creating and using a podman server
     4. [Postgresql Database](container/services/db-postgresql/README.md)
 3. Podman maintenance services
     1. [Watchtower](container/maintenance/watchtower/README.md)
+4. Podman extra services
+    1. OVH / Kimsufi Hoster
+        1. [Beamium (RTM)](container/extras/ovh-kimsufi/beamium/README.md)
