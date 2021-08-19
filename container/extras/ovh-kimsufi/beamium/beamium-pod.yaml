@@ -7,6 +7,13 @@ spec:
     - name: beamium
       image: docker.io/ovhcom/beamium:latest
       imagePullPolicy: always
+      resources:
+        requests:
+          memory: "128Mi"
+          cpu: "10m"
+        limits:
+          memory: "128Mi"
+          cpu: "100m"
       volumeMounts:
         - name: ovhcom-beamium-config-volume
           mountPath: /etc/beamium.d
