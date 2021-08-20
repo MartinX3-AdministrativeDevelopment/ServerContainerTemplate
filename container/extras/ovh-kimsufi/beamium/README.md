@@ -1,6 +1,7 @@
 # Description
 
-Prometheus to Warp10 metrics forwarder According to the OVH docs needed for the Real Time Monitoring (RTM)
+Prometheus to Warp10 metrics forwarder  
+According to the OVH docs needed for the Real Time Monitoring (RTM)
 
 ## Table of contents
 
