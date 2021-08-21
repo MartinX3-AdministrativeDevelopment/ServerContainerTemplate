@@ -1,4 +1,4 @@
-#/etc/systemd/system/podman-prune.timer
+#~/.config/systemd/user/podman-prune.timer
 [Unit]
 Description=Prune unused dockerimages/-tags to free up disk space
 
