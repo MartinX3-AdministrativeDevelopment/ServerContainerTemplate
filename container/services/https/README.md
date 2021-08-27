@@ -2,10 +2,14 @@
 
 HTTPS support
 
+SWAG - Secure Web Application Gateway sets up an Nginx webserver and reverse proxy with php support and a built-in
+certbot client that automates free SSL server certificate generation and renewal processes (Let's Encrypt and ZeroSSL).\
+It also contains fail2ban for intrusion prevention.
+
 ## Table of contents
 
 1. [Service requirements](#service-requirements)
-1. [Installation instructions](#installation-instructions)
+2. [Installation instructions](#installation-instructions)
 
 ### Service requirements
 
@@ -13,5 +17,8 @@ HTTPS support
 
 ### Installation instructions
 
-1. [Installation](https://github.com/MartinX3-EducationOrganization/nginx-certbot/tree/MartinX3/server-docker-compose)
-    1. [Step by step guide](https://medium.com/@pentacent/nginx-and-lets-encrypt-with-docker-in-less-than-5-minutes-b4b8a60d3a71)
+1. Create the volume if it does not exist.
+    1. `podman play kube ./https-pod-pvc.yaml`
+2. Configure the env variables in [https-pod.yaml](https-pod.yaml)
+3. `podman play kube ./https-pod.yaml`
+4. Follow the [docs](https://docs.linuxserver.io/general/swag)
