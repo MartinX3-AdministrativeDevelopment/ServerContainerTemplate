@@ -8,16 +8,20 @@ spec:
       image: ghcr.io/linuxserver/swag:latest
       imagePullPolicy: always
       env:
-        - name: PUID
-          value: "1000"
+        - name: EMAIL
+          value: ""
+        - name: ONLY_SUBDOMAINS
+          value: FALSE
         - name: PGID
           value: "1000"
+        - name: PUID
+          value: "1000"
+        - name: SUBDOMAINS
+          value: "www,"
         - name: TZ
           value: "Europe/Berlin"
         - name: URL
           value: "yourdomain.url"
-        - name: SUBDOMAINS
-          value: "www,"
         - name: VALIDATION
           value: "http"
       ports:
