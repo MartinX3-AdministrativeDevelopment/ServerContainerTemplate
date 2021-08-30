@@ -50,6 +50,7 @@ spec:
       volumeMounts:
         - name: https-nginx-swag-volume
           mountPath: /config
+  restartPolicy: Always
   volumes:
     - name: https-nginx-swag-volume
       persistentVolumeClaim:
