@@ -2,6 +2,9 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: https-nginx
+  labels:
+    app: https-nginx
+    io.containers.autoupdate: image
 spec:
   containers:
     - name: swag
