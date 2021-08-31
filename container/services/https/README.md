@@ -22,3 +22,7 @@ It also contains fail2ban for intrusion prevention.
 2. Configure the env variables in [https-pod.yaml](https-pod.yaml)
 3. `podman play kube ./https-pod.yaml`
 4. Follow the [docs](https://docs.linuxserver.io/general/swag)
+5. Let the pod autostart with the system
+    1. `cd ~/.config/systemd/user/`
+    2. `podman generate systemd --files --name https-nginx`
+    3. `systemctl --user --now enable pod-https-nginx.service`
