@@ -80,6 +80,8 @@ Podman is compatible to it. Use it only if you get problems with podman compose.
     1. [Example motd generation files.](examples/motd)
         1. Needs package `lm_sensors`
 7. Use a [Podman Cockpit UI](https://github.com/cockpit-project/cockpit-podman)
+    1. Use [https-nginx](../../container/services/https/README.md) together
+       with [this manual to use the nginx cert](https://github.com/cockpit-project/cockpit/wiki/Proxying-Cockpit-over-nginx)
 
 #### Security Tips
 
