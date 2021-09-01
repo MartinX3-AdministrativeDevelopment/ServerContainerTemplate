@@ -26,3 +26,4 @@ It also contains fail2ban for intrusion prevention.
     1. `cd ~/.config/systemd/user/`
     2. `podman generate systemd --files --name https-nginx`
     3. `systemctl --user --now enable pod-https-nginx.service`
+    4. `systemctl --user --now enable container-https-nginx-swag.service`
