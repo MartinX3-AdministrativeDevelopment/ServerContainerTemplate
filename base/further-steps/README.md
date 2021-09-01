@@ -47,6 +47,7 @@ podman-docker package.
 - [Podman Rootless](https://github.com/containers/podman/blob/main/docs/tutorials/rootless_tutorial.md)
 - `reboot`
 - `podman network create --subnet 2001:db8::/64 --ipv6 podman`
+- `loginctl enable-linger username` to keep he services running, even after a logout.
 
 ### Maintenance Tips
 
