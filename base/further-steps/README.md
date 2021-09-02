@@ -6,9 +6,10 @@ Universal maintenance tips
 
 1. [Installation instructions](#installation-instructions)
     1. [SSH](#ssh)
-    1. [DynDNS](#dyndns)
-1. [Maintenance Tips](#maintenance-tips)
-1. [Security Tips](#security-tips)
+    2. [DynDNS](#dyndns)
+    3. [Podman](#podman)
+2. [Maintenance Tips](#maintenance-tips)
+3. [Security Tips](#security-tips)
 
 ### Installation instructions
 
