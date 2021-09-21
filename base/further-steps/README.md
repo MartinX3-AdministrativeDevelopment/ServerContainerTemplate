@@ -53,12 +53,15 @@ podman-docker package.
 ### Maintenance Tips
 
 1. Bash autocompletion
-2. [Health status of the storage](https://wiki.archlinux.org/title/S.M.A.R.T.)
+2. Automatically clean kernel modules
+    1. `paru -Syu kernel-modules-hook`
+    2. `systemctl enable --now linux-modules-cleanup.service`
+4. [Health status of the storage](https://wiki.archlinux.org/title/S.M.A.R.T.)
     1. Automatic email if problems happen
-3. [RAID health](https://wiki.archlinux.org/title/RAID#RAID_Maintenance)
+5. [RAID health](https://wiki.archlinux.org/title/RAID#RAID_Maintenance)
     1. Automatic email if problems happen
     2. Prefer filesystem native RAID support like RAID 1 on BTRFS
-4. Filesystem health (Example [BTRFS](https://wiki.archlinux.org/title/btrfs)
+6. Filesystem health (Example [BTRFS](https://wiki.archlinux.org/title/btrfs)
    & [btrfsmaintenance](https://aur.archlinux.org/packages/btrfsmaintenance/))
     1. Automatic email if problems happen
 5. [Prune unused dockerimages/-tags to free up disk space](examples/podman/prune)
