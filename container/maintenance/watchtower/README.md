@@ -11,6 +11,7 @@ A docker image version checker
 ### Service requirements
 
 - [Server](../../../base/operating-system)
+- podman-docker
 
 ### Installation instructions
 
