@@ -10,6 +10,7 @@ It also contains fail2ban for intrusion prevention.
 
 1. [Service requirements](#service-requirements)
 2. [Installation instructions](#installation-instructions)
+3. [Notes](#notes)
 
 ### Service requirements
 
@@ -28,3 +29,7 @@ It also contains fail2ban for intrusion prevention.
     3. `systemctl --user --now enable pod-https-nginx.service`
     4. `systemctl --user --now enable container-https-nginx-swag.service`
 6. An example config is [here](examples)
+
+### Notes
+
+- ZeroSSL offers max. 3 SSL certificates at a time -> https://zerossl.com/pricing/
