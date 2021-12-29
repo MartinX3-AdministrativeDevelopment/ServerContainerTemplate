@@ -28,7 +28,7 @@ Universal maintenance tips
       [OpenSSH]
       title=OpenSSH
       description=SSH access
-      ports=22/tcp|22/udp # Your custom ssh port.
+      ports=22/tcp # Your custom ssh port.
       ```
     - ```bash
       # ufw allow OpenSSH && ufw limit OpenSSH
