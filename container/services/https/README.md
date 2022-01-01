@@ -36,3 +36,4 @@ It also contains fail2ban for intrusion prevention.
 - [podman play kube docs](https://docs.podman.io/en/latest/markdown/podman-play-kube.1.html)
 - [podman generate kube docs](https://docs.podman.io/en/latest/markdown/podman-generate-kube.1.html)
 - [kubernetes objects docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/)
+- [kubernetes API pod reference](https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/)
