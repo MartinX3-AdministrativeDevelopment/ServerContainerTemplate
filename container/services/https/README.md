@@ -33,3 +33,6 @@ It also contains fail2ban for intrusion prevention.
 ### Notes
 
 - ZeroSSL offers max. 3 SSL certificates at a time -> https://zerossl.com/pricing/
+- [podman play kube docs](https://docs.podman.io/en/latest/markdown/podman-play-kube.1.html)
+- [podman generate kube docs](https://docs.podman.io/en/latest/markdown/podman-generate-kube.1.html)
+- [kubernetes objects docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/)
