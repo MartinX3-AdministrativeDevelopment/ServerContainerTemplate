@@ -7,7 +7,7 @@ metadata:
     io.containers.autoupdate: image
 spec:
   containers:
-    - name: swag
+    - name: https-nginx
       image: ghcr.io/linuxserver/swag:latest
       imagePullPolicy: always
       env:
@@ -48,10 +48,10 @@ spec:
           add:
             - NET_ADMIN
       volumeMounts:
-        - name: https-nginx-swag-volume
+        - name: https-nginx-volume
           mountPath: /config
   restartPolicy: Always
   volumes:
-    - name: https-nginx-swag-volume
+    - name: https-nginx-volume
       persistentVolumeClaim:
-        claimName: https-nginx-swag-volume-pvc
+        claimName: https-nginx-volume-pvc

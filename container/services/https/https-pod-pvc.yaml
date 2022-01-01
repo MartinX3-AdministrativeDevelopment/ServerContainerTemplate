@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: https-nginx-swag-volume-pvc
+  name: https-nginx-volume-pvc
 spec:
   storageClassName: default
   accessModes:
