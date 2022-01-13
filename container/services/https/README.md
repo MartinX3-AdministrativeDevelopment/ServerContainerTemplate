@@ -38,3 +38,4 @@ It also contains fail2ban for intrusion prevention.
 - [kubernetes objects docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/)
 - [kubernetes API pod reference](https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/)
 - [kubernetes Service docs](https://kubernetes.io/docs/concepts/services-networking/service/) (network and maybe more)
+- [kubernetes API Service reference](https://kubernetes.io/docs/reference/kubernetes-api/service-resources/service-v1/)
