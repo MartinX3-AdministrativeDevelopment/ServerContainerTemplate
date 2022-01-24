@@ -39,4 +39,4 @@ It also contains fail2ban for intrusion prevention.
 - [kubernetes API pod reference](https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/)
 - [kubernetes Service docs](https://kubernetes.io/docs/concepts/services-networking/service/) (network and maybe more)
 - [kubernetes API Service reference](https://kubernetes.io/docs/reference/kubernetes-api/service-resources/service-v1/)
-- [firewall IPv4 forwarding](https://serverfault.com/questions/1019115/how-to-redirect-port-80-to-8080-while-keeping-8080-closed-to-the-internet)
+- [firewall IPv4 Port redirection](https://serverfault.com/questions/1019115/how-to-redirect-port-80-to-8080-while-keeping-8080-closed-to-the-internet)
