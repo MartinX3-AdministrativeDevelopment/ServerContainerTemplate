@@ -5,7 +5,7 @@ A postgresql database
 ## Table of contents
 
 1. [Service requirements](#service-requirements)
-1. [Installation instructions](#installation-instructions)
+2. [Installation instructions](#installation-instructions)
 
 ### Service requirements
 

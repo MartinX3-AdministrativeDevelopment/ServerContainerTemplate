@@ -8,8 +8,8 @@ Creating and using a podman server
     1. Operating System
         - [Arch Linux Server](base/operating-system/linux/arch/README.md)
         - [Alpine Linux Server](base/operating-system/linux/alpine/README.md)
-    1. [IPMI](base/IPMI.md)
-    1. [Further Steps](base/further-steps/README.md)
+    2. [IPMI](base/IPMI.md)
+    3. [Further Steps](base/further-steps/README.md)
 2. Podman services
     1. [HTTPS](container/services/https/README.md)
     2. [LDAP](container/services/ldap/README.md)

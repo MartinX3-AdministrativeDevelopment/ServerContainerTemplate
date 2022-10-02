@@ -5,7 +5,7 @@ A LDAP server using 389 DS
 ## Table of contents
 
 1. [Service requirements](#service-requirements)
-1. [Installation instructions](#installation-instructions)
+2. [Installation instructions](#installation-instructions)
 
 ### Service requirements
 

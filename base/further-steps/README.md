@@ -37,7 +37,7 @@ Universal maintenance tips
 #### DynDNS
 
 1. [Example free DynDNS service](https://freedns.afraid.org/)
-1. [Updater for the dyndns service](examples/dyndns)
+2. [Updater for the dyndns service](examples/dyndns)
 
 #### Podman
 
@@ -56,30 +56,31 @@ podman-docker package.
 2. Automatically clean kernel modules
     1. `paru -Syu kernel-modules-hook`
     2. `systemctl enable --now linux-modules-cleanup.service`
-4. [Health status of the storage](https://wiki.archlinux.org/title/S.M.A.R.T.)
+3. [Health status of the storage](https://wiki.archlinux.org/title/S.M.A.R.T.)
     1. Automatic email if problems happen
-5. [RAID health](https://wiki.archlinux.org/title/RAID#RAID_Maintenance)
+4. [RAID health](https://wiki.archlinux.org/title/RAID#RAID_Maintenance)
     1. Automatic email if problems happen
     2. Prefer filesystem native RAID support like RAID 1 on BTRFS
-6. Filesystem health (Example [BTRFS](https://wiki.archlinux.org/title/btrfs)
+5. Filesystem health (Example [BTRFS](https://wiki.archlinux.org/title/btrfs)
    & [btrfsmaintenance](https://aur.archlinux.org/packages/btrfsmaintenance/))
     1. Automatic email if problems happen
-5. [Prune unused dockerimages/-tags to free up disk space](examples/podman/prune)
-6. Displaying information & updatable packages on (ssh) login
+6. [Prune unused dockerimages/-tags to free up disk space](examples/podman/prune)
+7. Displaying information & updatable packages on (ssh) login
     1. [Example motd generation files.](examples/motd)
         1. Needs package `lm_sensors`
-7. Use a [Podman Cockpit UI](https://github.com/cockpit-project/cockpit-podman)
+8. Use a [Podman Cockpit UI](https://github.com/cockpit-project/cockpit-podman)
     1. Use [https-nginx](../../container/services/https/README.md) together
        with [this manual to use the nginx cert](https://github.com/cockpit-project/cockpit/wiki/Proxying-Cockpit-over-nginx)
 
 #### Security Tips
 
 1. [Podman.io](https://podman.io/)
-1. [Podman.io - Tutorials](https://docs.podman.io/en/latest/Tutorials.html)
-1. [Podman.io - Documentation](https://docs.podman.io/en/latest/)
-1. [Docker Wiki](https://docs.docker.com/)
-1. [Docker Security](https://docs.docker.com/engine/security/)
-1. [Docker Secrets](https://docs.docker.com/engine/swarm/secrets/)
-1. [Generate SSL config](https://ssl-config.mozilla.org/)
-1. [Test website for security](https://www.ssllabs.com/ssltest/)
-1. [Further test websites for security](https://geekflare.com/de/ssl-test-certificate/)
+2. [Podman.io - Tutorials](https://docs.podman.io/en/latest/Tutorials.html)
+3. [Podman.io - Documentation](https://docs.podman.io/en/latest/)
+4. [Docker Wiki](https://docs.docker.com/)
+5. [Docker Security](https://docs.docker.com/engine/security/)
+6. [Docker Secrets](https://docs.docker.com/engine/swarm/secrets/)
+7. [Generate SSL config](https://ssl-config.mozilla.org/)
+8. Test website for security
+    1. [SSL Labs](https://www.ssllabs.com/ssltest/)
+    2. [Geekflare](https://geekflare.com/de/ssl-test-certificate/)

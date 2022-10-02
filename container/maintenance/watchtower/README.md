@@ -5,8 +5,8 @@ A docker image version checker
 ## Table of contents
 
 1. [Service requirements](#service-requirements)
-1. [Installation instructions](#installation-instructions)
-2. [Notes](#notes)
+2. [Installation instructions](#installation-instructions)
+3. [Notes](#notes)
 
 ### Service requirements
 
