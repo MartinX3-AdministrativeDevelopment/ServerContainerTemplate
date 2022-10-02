@@ -6,15 +6,17 @@ Using IPMI to remotely install a server OS.
 
 1. [Usage](#usage)
 2. [FAQ](#faq)
-    1. [Reset IPMI](#reset-IPMI)
+   1. [Reset IPMI](#reset-IPMI)
 
 ### Usage
 
 Because of the trouble the average user has using IPMI on servers we use a container.
 
+Contains chrome-browser without java plugin
 https://github.com/solarkennedy/ipmi-kvm-docker
 
-Please use its README.
+Contains firefox with java plugin
+https://github.com/lmacka/ipmi-kvm-docker
 
 ### FAQ
 
