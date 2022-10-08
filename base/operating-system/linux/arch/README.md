@@ -24,3 +24,4 @@ Creating an arch linux server
 
 1. [Arch wiki](https://wiki.archlinux.org/)
 2. [Arch Wiki - System_maintenance](https://wiki.archlinux.org/index.php/System_maintenance)
+3. [Encryption & remote unlocking - Step-by-Step Guide](https://github.com/random-archer/mkinitcpio-systemd-tool/wiki/Case%3A-Complete-BTRFS-Setup-%28step-by-step%29)
