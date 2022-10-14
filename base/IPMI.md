@@ -4,21 +4,22 @@ Using IPMI to remotely install a server OS.
 
 ## Table of contents
 
-1. [Usage](#usage)
-2. [FAQ](#faq)
-   1. [Reset IPMI](#reset-IPMI)
+1. [FAQ](#faq)
+   1. [IPMI needs TLS 1.1 and Java 6](#IPMI-needs-TLS-1.1-and-Java-6)
+   2. [Reset IPMI](#reset-IPMI)
 
-### Usage
+### FAQ
 
-Because of the trouble the average user has using IPMI on servers we use a container.
+#### IPMI needs TLS 1.1 and Java 6
+
+The most up-to-date repo
+https://github.com/DomiStyle/docker-idrac6
 
 Contains chrome-browser without java plugin
 https://github.com/solarkennedy/ipmi-kvm-docker
 
 Contains firefox with java plugin
 https://github.com/lmacka/ipmi-kvm-docker
-
-### FAQ
 
 #### Reset IPMI
 
