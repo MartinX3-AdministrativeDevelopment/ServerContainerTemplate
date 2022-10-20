@@ -46,8 +46,14 @@ Universal maintenance tips
 
 #### DynDNS
 
-1. [Example free DynDNS service](https://freedns.afraid.org/)
-2. [Updater for the dyndns service](examples/dyndns)
+- Services
+    - IPv6 & IPv4
+        - [NSUpdate](https://www.nsupdate.info/)
+        - [FreeDNS](https://freedns.afraid.org/)
+        - [Dynu](https://www.dynu.com/)
+    - IPv4
+        - [DuckDNS](https://www.duckdns.org/)
+- [Updater for the dyndns service](examples/dyndns)
 
 #### Podman
 
