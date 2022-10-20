@@ -9,6 +9,11 @@ Creating an arch linux server
 
 ### Installation instructions
 
+Feel free to use a solution like ansible to deploy a server.
+
+- Example
+   - [ansible-archlinux-encrypted-roo](https://github.com/Loader009/ansible-archlinux-encrypted-root)
+
 1. [Installation](https://wiki.archlinux.org/index.php/Installation_guide)
    1. Partition-layout -> [GPT](https://wiki.archlinux.org/index.php/Partitioning#UEFI/GPT_layout_example)
    2. Kernel -> `linux-lts`
