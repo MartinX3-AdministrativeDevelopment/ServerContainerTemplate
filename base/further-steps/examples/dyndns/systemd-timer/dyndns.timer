@@ -1,6 +1,6 @@
 #/etc/systemd/system/dyndns.timer
 [Unit]
-Description=DynDNS update for freedns.afraid.org
+Description=DynDNS update
 
 [Timer]
 OnBootSec=2min
