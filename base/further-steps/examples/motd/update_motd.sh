@@ -24,7 +24,7 @@ fi
 MOTD=$MOTD$WHITE$(uname -a)"\n"
 MOTD=$MOTD$WHITE$(uptime | cut -c2-)"\n"
 MOTD=$MOTD$BLUE_LIGHT"CPU\t\t$WHITE= $(grep -P 'model name\t: ' </proc/cpuinfo | uniq | cut -c14-)\n"
-MOTD=$MOTD$BLUE_LIGHT"Processes\t$WHITE= You are running $(ps U "$USER" h | wc -l) of $(ps -Afl | wc -l) processes \n"
+MOTD=$MOTD$BLUE_LIGHT"Processes\t$WHITE= You are running $(ps -A | wc -l) processes \n"
 MOTD=$MOTD$BLUE_LIGHT"Temperatures\n"
 MOTD=$MOTD"$WHITE$(sensors)\n\n"
 MOTD=$MOTD$BLUE_LIGHT"Memory & Swap\n"
