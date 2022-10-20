@@ -53,7 +53,12 @@ Universal maintenance tips
         - [Dynu](https://www.dynu.com/)
     - IPv4
         - [DuckDNS](https://www.duckdns.org/)
-- [Updater for the dyndns service](examples/dyndns)
+- Updater
+    - Container
+        - [SWAG](https://github.com/linuxserver/docker-swag)
+          - DynDNS + HTTPS Proxy
+        - [DuckDNS](https://hub.docker.com/r/linuxserver/duckdns/)
+    - [Native Updater](examples/dyndns)
 
 #### Podman
 
