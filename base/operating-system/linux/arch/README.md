@@ -17,8 +17,9 @@ Feel free to use a solution like ansible to deploy a server.
 1. [Installation](https://wiki.archlinux.org/index.php/Installation_guide)
    1. Partition-layout -> [GPT](https://wiki.archlinux.org/index.php/Partitioning#UEFI/GPT_layout_example)
    2. Kernel -> `linux-lts`
-   3. If UEFI is used, please use:  
-      Bootloader -> [systemd-boot](https://wiki.archlinux.org/index.php/Systemd-boot)
+   3. Bootloader
+      1. [UEFI](https://wiki.archlinux.org/index.php/Systemd-boot)
+      2. [BIOS](https://wiki.archlinux.org/title/GRUB)
 2. Install & configure software:
    1. [Network name resolution](https://wiki.archlinux.org/index.php/Systemd-resolved)
    2. [Sync packet mirrors](https://wiki.archlinux.org/index.php/Reflector)
