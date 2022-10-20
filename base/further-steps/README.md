@@ -5,33 +5,43 @@ Universal maintenance tips
 ## Table of contents
 
 1. [Installation instructions](#installation-instructions)
-    1. [SSH](#ssh)
-    2. [DynDNS](#dyndns)
-    3. [Podman](#podman)
+    1. [Firewall](#firewall)
+    2. [SSH](#ssh)
+    3. [DynDNS](#dyndns)
+    4. [Podman](#podman)
 2. [Maintenance Tips](#maintenance-tips)
 3. [Security Tips](#security-tips)
 
 ### Installation instructions
 
-### Firewall
+#### Firewall
 
-- [UFW](https://wiki.archlinux.org/title/Uncomplicated_Firewall)
+- [FirewallD](https://wiki.archlinux.org/title/firewalld)
     - Easy to maintain with its config files
-    - It has a rate limit which makes sshguard / fail2ban useless for most cases, especially since they are vulnerable
-      to a spoofed source header.
+    - Supported by Podman since v4.0 with netavark
+- [Fail2Ban](https://wiki.archlinux.org/title/Fail2ban)
+    - Rate limit against attacks
+    - FirewallD support
 
 #### SSH
 
 - [OpenSSH](https://wiki.archlinux.org/title/OpenSSH)
-    - ```bash
-      # /etc/ufw/applications.d/OpenSSH
-      [OpenSSH]
-      title=OpenSSH
-      description=SSH access
-      ports=22/tcp # Your custom ssh port.
+    - By default, firewallD has ssh on port 22 enabled. Please change the port to avoid attacks.
+    - ```xml
+      <!-- /etc/firewalld/services/ssh-custom.xml -->
+      <?xml version="1.0" encoding="utf-8"?>
+      <service>
+          <short>SSH Custom</short>
+          <description>Service for the custom ssh port.</description>
+          <port protocol="tcp" port="9999"/>
+      </service>
       ```
     - ```bash
-      # ufw allow OpenSSH && ufw limit OpenSSH
+      firewall-offline-cmd --zone=public --remove-service-from-zone ssh
+      firewall-offline-cmd --zone=public --add-service ssh-custom
+      systemctl start firewalld.service
+      # TEST YOUR SSH ACCESS BY OPENING A NEW CONNECTION!
+      systemctl enable --now firewalld.service
       ```
 
 #### DynDNS
