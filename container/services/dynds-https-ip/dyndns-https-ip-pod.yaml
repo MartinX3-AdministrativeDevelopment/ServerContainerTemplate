@@ -1,0 +1,70 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dyndns
+  labels:
+    io.containers.autoupdate: registry
+spec:
+  containers:
+    - name: https
+      image: ghcr.io/linuxserver/swag:latest
+      imagePullPolicy: always
+      env:
+        - name: DUCKDNSTOKEN
+          value: "e6e3d827-4b24-4e59-b15b-7ddaa845b705"
+        - name: PGID
+          value: "1000"
+        - name: PUID
+          value: "1000"
+        - name: SUBDOMAINS
+          value: "wildcard"
+        - name: TZ
+          value: "Europe/Berlin"
+        - name: URL
+          value: "exploding-hamster.duckdns.org"
+        - name: VALIDATION
+          value: "duckdns"
+      ports:
+        - containerPort: 443
+          hostPort: 443
+          name: https
+          protocol: TCP
+      resources:
+        requests:
+          cpu: "10m"
+          memory: "128Mi"
+        limits:
+          cpu: "100m"
+          memory: "128Mi"
+      securityContext:
+        capabilities:
+          add:
+            - NET_ADMIN
+      volumeMounts:
+        - name: dyndns-https-volume
+          mountPath: /config
+    - name: ip
+      image: ghcr.io/linuxserver/duckdns:latest
+      imagePullPolicy: always
+      env:
+        - name: TOKEN
+          value: "e6e3d827-4b24-4e59-b15b-7ddaa845b705"
+        - name: PGID
+          value: "1000"
+        - name: PUID
+          value: "1000"
+        - name: SUBDOMAINS
+          value: "exploding-hamster"
+        - name: TZ
+          value: "Europe/Berlin"
+      resources:
+        requests:
+          cpu: "10m"
+          memory: "128Mi"
+        limits:
+          cpu: "100m"
+          memory: "128Mi"
+  volumes:
+    - name: dyndns-https-volume
+      persistentVolumeClaim:
+        claimName: dyndns-https-pvc

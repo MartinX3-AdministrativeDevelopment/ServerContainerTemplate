@@ -1,3 +1,0 @@
-# /etc/crontab
-# DynDNS update for freedns.afraid.org
-*/5 * * * * /usr/bin/curl -s https://v6.sync.afraid.org/u/YourSecretIPv6Token/

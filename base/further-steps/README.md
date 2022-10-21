@@ -7,8 +7,8 @@ Universal maintenance tips
 1. [Installation instructions](#installation-instructions)
     1. [Firewall](#firewall)
     2. [SSH](#ssh)
-    3. [DynDNS](#dyndns)
-    4. [Podman](#podman)
+    3. [Podman](#podman)
+    4. [DynDNS](#dyndns)
 2. [Maintenance Tips](#maintenance-tips)
 3. [Security Tips](#security-tips)
 
@@ -44,22 +44,6 @@ Universal maintenance tips
       systemctl enable --now firewalld.service
       ```
 
-#### DynDNS
-
-- Services
-    - IPv6 & IPv4
-        - [NSUpdate](https://www.nsupdate.info/)
-        - [FreeDNS](https://freedns.afraid.org/)
-        - [Dynu](https://www.dynu.com/)
-    - IPv4
-        - [DuckDNS](https://www.duckdns.org/)
-- Updater
-    - Container
-        - [SWAG](https://github.com/linuxserver/docker-swag)
-          - DynDNS + HTTPS Proxy
-        - [DuckDNS](https://hub.docker.com/r/linuxserver/duckdns/)
-    - [Native Updater](examples/dyndns)
-
 #### Podman
 
 Successor of docker. Compatible to docker. Better security. Designed to run rootless. Has a docker API layer with the
@@ -89,8 +73,12 @@ podman-docker package.
     1. [Example motd generation files.](examples/motd)
         1. Needs package `lm_sensors`
 8. Use a [Podman Cockpit UI](https://github.com/cockpit-project/cockpit-podman)
-    1. Use [https-nginx](../../container/services/https/README.md) together
+    1. Use [dynds-https-ip](../../container/services/dynds-https-ip/README.md) together
        with [this manual to use the nginx cert](https://github.com/cockpit-project/cockpit/wiki/Proxying-Cockpit-over-nginx)
+
+#### DynDNS
+
+- [Pod](../../container/services/dynds-https-ip/README.md)
 
 #### Security Tips
 

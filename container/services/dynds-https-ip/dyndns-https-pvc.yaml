@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: https-nginx-volume-pvc
+  name: dyndns-https-pvc
 spec:
   storageClassName: default
   accessModes:
