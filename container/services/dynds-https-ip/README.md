@@ -19,12 +19,14 @@ It also contains fail2ban for intrusion prevention.
 ### Installation instructions
 
 1. Follow the [docs](https://docs.linuxserver.io/general/swag)
-2. Start the container
+2. Install files
+   1. Container -> [www.conf](www.conf)
+3. Start the container
    ```bash
    podman kube play dyndns-https-pvc.yaml
    podman kube play dyndns-https-ip-pod.yaml
    ```
-3. Let the pod autostart with the system
+4. Let the pod autostart with the system
    ```bash
    cd ~/.config/systemd/user/
    podman generate systemd --files --name dyndns
@@ -32,8 +34,9 @@ It also contains fail2ban for intrusion prevention.
    systemctl --user --now enable container-dyndns-ip.service
    systemctl --user --now enable pod-dyndns.service
    ```
-4. Open the firewall
+5. Open the firewall
    ```bash
+   firewall-cmd --add-service=http --permanent
    firewall-cmd --add-service=https --permanent
    firewall-cmd --reload
    ```
