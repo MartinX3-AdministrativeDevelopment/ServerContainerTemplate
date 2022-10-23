@@ -54,6 +54,10 @@ podman-docker package.
 - `reboot`
 - `loginctl enable-linger username` to keep he services running, even after a logout.
 
+#### DynDNS
+
+- [Pod](../../container/services/dynds-https-ip/README.md)
+
 ### Maintenance Tips
 
 1. Bash autocompletion
@@ -76,11 +80,7 @@ podman-docker package.
     1. Use [dynds-https-ip](../../container/services/dynds-https-ip/README.md) together
        with [this manual to use the nginx cert](https://github.com/cockpit-project/cockpit/wiki/Proxying-Cockpit-over-nginx)
 
-#### DynDNS
-
-- [Pod](../../container/services/dynds-https-ip/README.md)
-
-#### Security Tips
+### Security Tips
 
 1. [Podman.io](https://podman.io/)
 2. [Podman.io - Tutorials](https://docs.podman.io/en/latest/Tutorials.html)
