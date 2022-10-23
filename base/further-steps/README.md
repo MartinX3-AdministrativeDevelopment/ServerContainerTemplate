@@ -76,9 +76,7 @@ podman-docker package.
 7. Displaying information & updatable packages on (ssh) login
     1. [Example motd generation files.](examples/motd)
         1. Needs package `lm_sensors`
-8. Use a [Podman Cockpit UI](https://github.com/cockpit-project/cockpit-podman)
-    1. Use [dynds-https-ip](../../container/services/dynds-https-ip/README.md) together
-       with [this manual to use the nginx cert](https://github.com/cockpit-project/cockpit/wiki/Proxying-Cockpit-over-nginx)
+8. Web based server interface [Cockpit](./examples/cockpit/README.md)
 
 ### Security Tips
 
