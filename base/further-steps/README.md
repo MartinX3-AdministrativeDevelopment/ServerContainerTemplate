@@ -77,6 +77,9 @@ podman-docker package.
     1. [Example motd generation files.](examples/motd)
         1. Needs package `lm_sensors`
 8. Web based server interface [Cockpit](./examples/cockpit/README.md)
+9. Backup [ESP](./examples/backup/99-esp-backup.hook) & [XBOOTLDR](./examples/backup/99-xbootldr-backup.hook) partition
+    - Don't use a RAID. The ESP partition is modified by UEFI and the XBOOTLDR Partition is modified by the bootloader for the bootcounter).
+      UEFI and Bootloader don't understand a RAID and will turn it async.
 
 ### Security Tips
 
