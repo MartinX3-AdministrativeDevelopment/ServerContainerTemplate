@@ -14,6 +14,7 @@ metadata:
   labels:
     io.containers.autoupdate: registry
 spec:
+  restartPolicy: on-failure
   containers:
     - name: https
       image: ghcr.io/linuxserver/swag:latest
