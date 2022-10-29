@@ -22,6 +22,8 @@ It also contains fail2ban for intrusion prevention.
 2. Start the pod
    ```bash
    podman kube play dyndns-https-pvc.yaml
+   # podman kube play dyndns-https-ip-secret.yaml # TODO WORKAROUND FOR https://github.com/containers/podman/issues/16269
+   podman secret create dyndns-https-ip-secret dyndns-https-ip-secret.json
    systemctl --user enable --now podman-kube@$(systemd-escape $(pwd)/dyndns-https-ip-pod.yaml).service
    ```
 3. Install files

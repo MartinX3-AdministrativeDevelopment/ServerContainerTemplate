@@ -1,13 +1,4 @@
 apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: dyndns-https-configmap
-data:
-  DNSTOKEN: e6e3d827-4b24-4e59-b15b-7ddaa845b705
-  SUBDOMAINS: exploding-hamster
-  URL: exploding-hamster.duckdns.org
----
-apiVersion: v1
 kind: Pod
 metadata:
   name: dyndns
@@ -22,8 +13,8 @@ spec:
       env:
         - name: DUCKDNSTOKEN
           valueFrom:
-            configMapKeyRef:
-              name: dyndns-https-configmap
+            secretKeyRef:
+              name: dyndns-https-ip-secret
               key: DNSTOKEN
         - name: PGID
           value: "1000"
@@ -35,8 +26,8 @@ spec:
           value: "Europe/Berlin"
         - name: URL
           valueFrom:
-            configMapKeyRef:
-              name: dyndns-https-configmap
+            secretKeyRef:
+              name: dyndns-https-ip-secret
               key: URL
         - name: VALIDATION
           value: "duckdns"
@@ -69,8 +60,8 @@ spec:
       env:
         - name: TOKEN
           valueFrom:
-            configMapKeyRef:
-              name: dyndns-https-configmap
+            secretKeyRef:
+              name: dyndns-https-ip-secret
               key: DNSTOKEN
         - name: PGID
           value: "1000"
@@ -78,8 +69,8 @@ spec:
           value: "1000"
         - name: SUBDOMAINS
           valueFrom:
-            configMapKeyRef:
-              name: dyndns-https-configmap
+            secretKeyRef:
+              name: dyndns-https-ip-secret
               key: SUBDOMAINS
         - name: TZ
           value: "Europe/Berlin"
