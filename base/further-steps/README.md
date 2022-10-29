@@ -9,6 +9,7 @@ Universal maintenance tips
     2. [SSH](#ssh)
     3. [Podman](#podman)
     4. [DynDNS](#dyndns)
+    5. [E-Mail to send notifications](#e-mail-to-send-notifications)
 2. [Maintenance Tips](#maintenance-tips)
 3. [Security Tips](#security-tips)
 
@@ -57,6 +58,10 @@ podman-docker package.
 #### DynDNS
 
 - [Pod](../../container/services/dynds-https-ip/README.md)
+
+### E-Mail to send notifications
+
+- [SMTP gateway](../../container/services/notification/README.md)
 
 ### Maintenance Tips
 

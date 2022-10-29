@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: smtp
+  labels:
+    io.containers.autoupdate: registry
+spec:
+  restartPolicy: on-failure
+  containers:
+    - name: gateway
+      image: docker.io/yoryan/mailrise:latest
+      imagePullPolicy: always
+      ports:
+        - containerPort: 8025
+          hostPort: 25
+          name: smtp
+          protocol: TCP
+      resources:
+        requests:
+          cpu: "10m"
+          memory: "128Mi"
+        limits:
+          cpu: "100m"
+          memory: "128Mi"
+      volumeMounts:
+        - name: mailrise.conf-hostpath
+          mountPath: /etc/mailrise.conf
+  volumes:
+    - name: mailrise.conf-hostpath
+      hostPath:
+        path: ./mailrise.conf # Change to bash output of $(pwd)/mailrise.conf
