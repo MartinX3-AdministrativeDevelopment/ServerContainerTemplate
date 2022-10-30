@@ -72,8 +72,11 @@ podman-docker package.
 3. [Health status of the storage](https://wiki.archlinux.org/title/S.M.A.R.T.)
     1. Automatic email if problems happen
 4. [RAID health](https://wiki.archlinux.org/title/RAID#RAID_Maintenance)
-    1. Automatic email if problems happen
+    1. [Automatic email if problems happen](https://wiki.archlinux.org/title/RAID#Email_notifications)
     2. Prefer filesystem native RAID support like RAID 1 on BTRFS
+    3. Send an email if an error happens
+        - https://aur.archlinux.org/packages/journalcheck
+        - https://github.com/lynix/journalcheck
 5. Filesystem health (Example [BTRFS](https://wiki.archlinux.org/title/btrfs)
    & [btrfsmaintenance](https://aur.archlinux.org/packages/btrfsmaintenance/))
     1. Automatic email if problems happen
