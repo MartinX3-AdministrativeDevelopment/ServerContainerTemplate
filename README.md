@@ -15,4 +15,4 @@ Creating and using a podman server
     2. [LDAP](container/services/ldap/README.md)
     3. [Postgresql Database](container/services/db-postgresql/README.md)
 3. Podman maintenance services
-    1. [Watchtower](container/maintenance/watchtower/README.md)
+    1. N/A
