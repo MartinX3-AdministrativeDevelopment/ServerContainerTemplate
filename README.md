@@ -15,5 +15,7 @@ Creating and using a podman server
     2. [E-Mail SMTP Notification](container/services/notification/README.md)
     3. [LDAP](container/services/ldap/README.md)
     4. [Postgresql Database](container/services/db-postgresql/README.md)
+    5. Borg Backup
+        1. [Server](container/services/borg-backup/server/README.md)
 3. Podman maintenance services
     1. N/A

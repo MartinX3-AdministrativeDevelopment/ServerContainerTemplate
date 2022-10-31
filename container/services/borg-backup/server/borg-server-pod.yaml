@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: borg
+  labels:
+    io.containers.autoupdate: registry
+spec:
+  restartPolicy: on-failure
+  containers:
+    - name: server
+      image: docker.io/tgbyte/borg-backup:latest
+      imagePullPolicy: always
+      env:
+        - name: BORG_AUTHORIZED_KEYS
+          valueFrom:
+            secretKeyRef:
+              name: borg-server-secret
+              key: AUTHORIZED_KEYS
+        - name: BORG_UID
+          value: "1000"
+        - name: BORG_GID
+          value: "1000"
+      ports:
+        - containerPort: 22
+          hostPort: 26351
+          name: ssh
+          protocol: TCP
+      resources:
+        requests:
+          cpu: "10m"
+          memory: "128Mi"
+        limits:
+          cpu: "1000m"
+          memory: "4096Mi"
+      volumeMounts:
+        - name: borg-server-backup-volume
+          mountPath: /var/backups/borg
+        - name: borg-server-ssh-keys-volume
+          mountPath: /var/lib/docker-borg
+  volumes:
+    - name: borg-server-backup-volume
+      persistentVolumeClaim:
+        claimName: borg-server-backup-pvc
+    - name: borg-server-ssh-keys-volume
+      persistentVolumeClaim:
+        claimName: borg-server-ssh-keys-pvc

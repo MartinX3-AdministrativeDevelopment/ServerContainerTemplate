@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- /etc/firewalld/services/borg-backup-server.xml -->
+<service>
+    <short>Borg-Backup-Server</short>
+    <description>The Borg backup server uses SSH to communicate.</description>
+    <port protocol="tcp" port="26351"/>
+</service>
