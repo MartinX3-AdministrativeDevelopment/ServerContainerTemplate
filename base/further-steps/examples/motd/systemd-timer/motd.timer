@@ -1,4 +1,4 @@
-#/etc/systemd/system/motd.timer
+# /etc/systemd/system/motd.timer
 [Unit]
 Description=Updates the package database and shows the result in the motd
 
