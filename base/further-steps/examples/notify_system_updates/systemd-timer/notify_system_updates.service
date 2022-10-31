@@ -1,0 +1,6 @@
+# /etc/systemd/system/notify_system_updates.service
+[Unit]
+Description=Updates the package database and pushes the result as email
+
+[Service]
+ExecStart=/usr/local/bin/notify_system_updates.sh

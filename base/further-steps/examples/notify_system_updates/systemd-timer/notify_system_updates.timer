@@ -1,0 +1,10 @@
+# /etc/systemd/system/notify_system_updates.timer
+[Unit]
+Description=Updates the package database and pushes the result as email
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=timers.target
