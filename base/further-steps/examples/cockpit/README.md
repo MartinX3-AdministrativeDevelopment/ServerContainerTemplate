@@ -15,11 +15,11 @@ Cockpit is a web-based graphical interface for servers.
 
 1. [Podman](https://wiki.archlinux.org/title/Cockpit)
 2. ```bash
-   firewall-cmd --add-service=cockpit --permanent
+   firewall-cmd --zone=public --add-service=cockpit --permanent
    firewall-cmd --reload
    ```
 3. Install files
-   1. Container -> [cockpit.subdomain.conf](cockpit.subdomain.conf)
+    1. Container -> [cockpit.subdomain.conf](cockpit.subdomain.conf)
 4. Restart https container
 5. ```bash
    systemctl enable --now cockpit.socket

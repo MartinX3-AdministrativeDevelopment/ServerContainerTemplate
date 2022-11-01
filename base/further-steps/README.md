@@ -38,7 +38,7 @@ Universal maintenance tips
       </service>
       ```
     - ```bash
-      firewall-offline-cmd --zone=public --remove-service-from-zone ssh
+      firewall-offline-cmd --remove-service-from-zone ssh
       firewall-offline-cmd --zone=public --add-service ssh-custom
       systemctl start firewalld.service
       # TEST YOUR SSH ACCESS BY OPENING A NEW CONNECTION!

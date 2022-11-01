@@ -27,11 +27,11 @@ It also contains fail2ban for intrusion prevention.
    systemctl --user enable --now podman-kube@$(systemd-escape $(pwd)/dyndns-https-ip-pod.yaml).service
    ```
 3. Install files
-   1. Container -> [www.conf](www.conf)
+    1. Container -> [www.conf](www.conf)
 4. Open the firewall
    ```bash
-   firewall-cmd --add-service=http --permanent
-   firewall-cmd --add-service=https --permanent
+   firewall-cmd --zone=public --add-service=http --permanent
+   firewall-cmd --zone=public --add-service=https --permanent
    firewall-cmd --reload
    ```
 
