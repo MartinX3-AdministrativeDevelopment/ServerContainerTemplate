@@ -7,8 +7,10 @@ spec:
   accessModes:
     - ReadWriteOnce
   resources:
+    limits:
+      storage: 1280Gi
     requests:
-      storage: 1536Gi
+      storage: 128Gi
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -19,5 +21,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   resources:
-    requests:
+    limits:
       storage: 10Mi
+    requests:
+      storage: 1Mi
