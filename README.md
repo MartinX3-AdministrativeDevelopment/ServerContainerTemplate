@@ -14,7 +14,7 @@ Creating and using a podman server
     1. [DYNDNS HTTPS IP](container/services/dynds-https-ip/README.md)
     2. [E-Mail SMTP Notification](container/services/notification/README.md)
     3. [LDAP](container/services/ldap/README.md)
-    4. [Postgresql Database](container/services/db-postgresql/README.md)
+    4. [Postgresql Database](container/services/postgresql/README.md)
     5. Borg Backup
         1. [Server](container/services/borg-backup/server/README.md)
 3. Podman maintenance services

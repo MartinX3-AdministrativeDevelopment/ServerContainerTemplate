@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: database
+  labels:
+    io.containers.autoupdate: registry
+spec:
+  restartPolicy: on-failure
+  containers:
+    - name: postgresql
+      image: docker.io/postgres:14-alpine
+      imagePullPolicy: always
+      env:
+        - name: POSTGRES_DB
+          value: "postgresql"
+        - name: POSTGRES_USER
+          valueFrom:
+            secretKeyRef:
+              name: postgresql-secret
+              key: POSTGRES_USER
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: postgresql-secret
+              key: POSTGRES_PASSWORD
+      ports:
+        - containerPort: 5432
+          hostPort: 5432
+          name: postgresql
+          protocol: TCP
+      resources:
+        requests:
+          cpu: "10m"
+          memory: "128Mi"
+        limits:
+          cpu: "500m"
+          memory: "2048Mi"
+      volumeMounts:
+        - name: postgresql-volume
+          mountPath: /var/lib/postgresql/data
+  volumes:
+    - name: postgresql-volume
+      persistentVolumeClaim:
+        claimName: postgresql-pvc
