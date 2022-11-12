@@ -8,7 +8,7 @@ spec:
   restartPolicy: on-failure
   containers:
     - name: postgresql
-      image: docker.io/postgres:14-alpine
+      image: docker.io/postgres:15-alpine
       imagePullPolicy: always
       env:
         - name: POSTGRES_DB
