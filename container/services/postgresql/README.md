@@ -17,11 +17,7 @@ A database
 ### Installation instructions
 
 1. Follow the [docs](https://www.postgresql.org/docs/current/app-initdb.html)
-2. Configuration inside ldap pod
-   ```bash
-   dsidm -b dc=exploding-hamster,dc=duckdns.org localhost group create --cn database_group
-   ```
-3. Start the pod
+2. Start the pod
    ```bash
    podman kube play postgresql-pvc.yaml
    # podman kube play postgresql-secret.yaml # TODO WORKAROUND FOR https://github.com/containers/podman/issues/16269

@@ -14,24 +14,19 @@ spec:
       env:
         - name: POSTGRESQL_ENABLE_LDAP
           value: "yes"
-        - name: POSTGRESQL_LDAP_SERVER
-          value: "ldap://ldap"
-        - name: POSTGRESQL_LDAP_PORT
-          value: 3389
         - name: POSTGRESQL_LDAP_BASE_DN
           value: "dc=exploding-hamster,dc=duckdns.org"
-        - name: POSTGRESQL_LDAP_BIND_DN
-          value: "ou=database,dc=exploding-hamster,dc=duckdns.org"
+        - name: POSTGRESQL_LDAP_PORT
+          value: 3389
+        - name: POSTGRESQL_LDAP_SEARCH_FILTER
+          value: "(&(uid=$username)(cn=databases))"
+        - name: POSTGRESQL_LDAP_SERVER
+          value: "ldap"
         - name: POSTGRESQL_PASSWORD
           valueFrom:
             secretKeyRef:
               name: postgresql-secret
               key: POSTGRESQL_PASSWORD
-      ports:
-        - containerPort: 5432
-          hostPort: 5432
-          name: postgresql
-          protocol: TCP
       resources:
         requests:
           cpu: "10m"

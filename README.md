@@ -16,6 +16,7 @@ Creating and using a podman server
     2. [DYNDNS HTTPS IP](container/services/dynds-https-ip/README.md)
     3. [E-Mail SMTP Notification](container/services/notification/README.md)
     4. [LDAP](container/services/ldap/README.md)
-    5. [Postgresql Database](container/services/postgresql/README.md)
+    5. [Nextcloud](container/services/nextcloud/README.md)
+    6. [Postgresql Database](container/services/postgresql/README.md)
 3. Podman maintenance services
     1. N/A
