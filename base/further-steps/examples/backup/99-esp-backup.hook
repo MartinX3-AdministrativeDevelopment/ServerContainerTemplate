@@ -1,4 +1,4 @@
-# /usr/share/libalpm/hooks/99-esp-backup.hook
+# /etc/pacman.d/hooks/99-esp-backup.hook
 
 [Trigger]
 Type = Package

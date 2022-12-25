@@ -1,11 +1,11 @@
-# /usr/share/libalpm/hooks/99-xbootldr-backup.hook
+# /etc/pacman.d/hooks/99-xbootldr-backup.hook
 
 [Trigger]
 Type = Package
 Operation = Upgrade
 Target = systemd
 Target = linux-lts
-Target = mkinitcpio
+Target = dracut
 
 [Action]
 Description = Backup XBOOTLDR to other partition
