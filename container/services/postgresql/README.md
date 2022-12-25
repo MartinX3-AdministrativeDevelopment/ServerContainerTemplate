@@ -8,6 +8,7 @@ A database
 
 1. [Service requirements](#service-requirements)
 2. [Installation instructions](#installation-instructions)
+2. [Upgrade instructions](#upgrade-instructions)
 
 ### Service requirements
 
@@ -24,3 +25,7 @@ A database
    podman secret create postgresql-secret postgresql-secret.json
    systemctl --user enable --now podman-kube@$(systemd-escape $(pwd)/postgresql-pod.yaml).service
    ```
+
+### Upgrade instructions
+
+https://www.postgresql.org/docs/current/upgrading.html
