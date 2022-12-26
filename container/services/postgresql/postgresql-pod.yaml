@@ -33,8 +33,8 @@ spec:
           cpu: "10m"
           memory: "128Mi"
         limits:
-          cpu: "500m"
-          memory: "2048Mi"
+          cpu: "250m"
+          memory: "1024Mi"
       volumeMounts:
         - name: postgresql-volume
           mountPath: /var/lib/postgresql/data
