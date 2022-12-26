@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ldap
+  labels:
+    io.containers.autoupdate: registry
+spec:
+  restartPolicy: on-failure
+  containers:
+    - name: 389ds
+      image: docker.io/389ds/dirsrv:2.2
+      imagePullPolicy: always
+      resources:
+        requests:
+          cpu: "10m"
+          memory: "256Mi"
+        limits:
+          cpu: "100m"
+          memory: "1024Mi"
+      volumeMounts:
+        - name: ldap-volume
+          mountPath: /data
+  volumes:
+    - name: ldap-volume
+      persistentVolumeClaim:
+        claimName: ldap-pvc

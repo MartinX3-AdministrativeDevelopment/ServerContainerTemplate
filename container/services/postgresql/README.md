@@ -8,16 +8,20 @@ A database
 
 1. [Service requirements](#service-requirements)
 2. [Installation instructions](#installation-instructions)
-2. [Upgrade instructions](#upgrade-instructions)
+3. [Upgrade instructions](#upgrade-instructions)
 
 ### Service requirements
 
-- [Server](../../../base/operating-system)
+- [LDAP](../ldap/README.md)
 
 ### Installation instructions
 
 1. Follow the [docs](https://www.postgresql.org/docs/current/app-initdb.html)
-2. Start the pod
+2. Configuration inside ldap pod
+   ```bash
+   dsidm -b dc=exploding-hamster,dc=duckdns.org localhost group create --cn database_group
+   ```
+3. Start the pod
    ```bash
    podman kube play postgresql-pvc.yaml
    # podman kube play postgresql-secret.yaml # TODO WORKAROUND FOR https://github.com/containers/podman/issues/16269

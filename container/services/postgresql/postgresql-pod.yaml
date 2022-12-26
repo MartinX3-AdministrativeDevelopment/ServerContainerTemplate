@@ -8,21 +8,25 @@ spec:
   restartPolicy: on-failure
   containers:
     - name: postgresql
-      image: docker.io/postgres:15-alpine
+      image:
+        docker.io/bitnami/postgresql:15
       imagePullPolicy: always
       env:
-        - name: POSTGRES_DB
-          value: "postgresql"
-        - name: POSTGRES_USER
+        - name: POSTGRESQL_ENABLE_LDAP
+          value: "yes"
+        - name: POSTGRESQL_LDAP_SERVER
+          value: "ldap://ldap"
+        - name: POSTGRESQL_LDAP_PORT
+          value: 3389
+        - name: POSTGRESQL_LDAP_BASE_DN
+          value: "dc=exploding-hamster,dc=duckdns.org"
+        - name: POSTGRESQL_LDAP_BIND_DN
+          value: "ou=database,dc=exploding-hamster,dc=duckdns.org"
+        - name: POSTGRESQL_PASSWORD
           valueFrom:
             secretKeyRef:
               name: postgresql-secret
-              key: POSTGRES_USER
-        - name: POSTGRES_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: postgresql-secret
-              key: POSTGRES_PASSWORD
+              key: POSTGRESQL_PASSWORD
       ports:
         - containerPort: 5432
           hostPort: 5432
@@ -37,7 +41,7 @@ spec:
           memory: "1024Mi"
       volumeMounts:
         - name: postgresql-volume
-          mountPath: /var/lib/postgresql/data
+          mountPath: /bitnami/postgresql
   volumes:
     - name: postgresql-volume
       persistentVolumeClaim:
