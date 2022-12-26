@@ -9,7 +9,7 @@ Cockpit is a web-based graphical interface for servers.
 
 ### Service requirements
 
-- [dynds-https-ip](../../../../container/services/dynds-https-ip/README.md)
+- [HTTPS](../../../../container/services/dynds-https-ip/README.md)
 
 ### Installation instructions
 

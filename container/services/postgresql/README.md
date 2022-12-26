@@ -16,8 +16,7 @@ A database
 
 ### Installation instructions
 
-1. Follow the docs of
-    - [PostgreSQL](https://www.postgresql.org/docs/current/app-initdb.html)
+1. Follow the [docs](https://www.postgresql.org/docs/current/app-initdb.html)
 2. Start the pod
    ```bash
    podman kube play postgresql-pvc.yaml
