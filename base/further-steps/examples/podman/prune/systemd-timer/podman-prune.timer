@@ -1,6 +1,6 @@
 #~/.config/systemd/user/podman-prune.timer
 [Unit]
-Description=Prune unused dockerimages/-tags to free up disk space
+Description=Prune unused images/-tags to free up disk space
 
 [Timer]
 OnCalendar=daily

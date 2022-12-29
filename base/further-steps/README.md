@@ -84,13 +84,14 @@ podman-docker package.
 7. [Notification about failed systemd services](https://wiki.archlinux.org/title/Systemd#Notifying_about_failed_services)
     1. [Notification script](examples/systemd-failure-notification.sh)
     2. Do the same for the rootless user (~/.config/systemd/user/service.d/toplevel-override.conf etc.)
-8. [Prune unused dockerimages/-tags to free up disk space](examples/podman/prune)
+8. [Prune unused images/-tags to free up disk space](examples/podman/prune)
 9. Displaying information & updatable packages on (ssh) login
     1. [Example motd generation files.](examples/motd)
         1. Needs package `lm_sensors`
 10. Web based server interface [Cockpit](./examples/cockpit/README.md)
 11. Backup [ESP](./examples/backup/99-esp-backup.hook) & [XBOOTLDR](./examples/backup/99-xbootldr-backup.hook) partition
-    - Don't use a RAID. The ESP partition is modified by UEFI and the XBOOTLDR Partition is modified by the bootloader for the bootcounter).
+    - Don't use a RAID. The ESP partition is modified by UEFI and the XBOOTLDR Partition is modified by the bootloader
+      for the bootcounter).
       UEFI and Bootloader don't understand a RAID and will turn it async.
 
 ### Security Tips
