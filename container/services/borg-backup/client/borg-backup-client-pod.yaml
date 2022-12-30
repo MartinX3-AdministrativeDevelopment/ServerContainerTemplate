@@ -1,0 +1,73 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: borg-backup
+  labels:
+    io.containers.autoupdate: registry
+spec:
+  restartPolicy: on-failure
+  containers:
+    - name: client
+      image: docker.io/b3vis/borgmatic:msmtp-1.7
+      imagePullPolicy: always
+      env:
+        - name: BORG_PASSPHRASE
+          valueFrom:
+            secretKeyRef:
+              name: borg-backup-client-secret
+              key: BORG_PASSPHRASE
+        - name: TZ
+          value: "Europe/Berlin"
+      resources:
+        requests:
+          cpu: "10m"
+          memory: "128Mi"
+        limits:
+          cpu: "1000m"
+          memory: "4096Mi"
+      volumeMounts:
+        - name: borg-backup-client-borg-cache-volume
+          mountPath: /root/.cache/borg
+        - name: borg-backup-client-borg-config-volume
+          mountPath: /root/.config/borg
+        - name: borg-backup-client-etc-borgmatic-volume
+          mountPath: /etc/borgmatic.d/
+        - name: borg-backup-client-ssh-volume
+          mountPath: /root/.ssh
+        - name: dyndns-https-volume
+          mountPath: /mnt/source/dyndns-https
+          readOnly: true
+        - name: ldap-volume
+          mountPath: /mnt/source/ldap
+          readOnly: true
+        - name: nextcloud-volume
+          mountPath: /mnt/source/nextcloud
+          readOnly: true
+        - name: postgresql-volume
+          mountPath: /mnt/source/postgresql
+          readOnly: true
+  volumes:
+    - name: borg-backup-client-borg-cache-volume
+      persistentVolumeClaim:
+        claimName: borg-backup-client-borg-cache-pvc
+    - name: borg-backup-client-borg-config-volume
+      persistentVolumeClaim:
+        claimName: borg-backup-client-borg-config-pvc
+    - name: borg-backup-client-etc-borgmatic-volume
+      persistentVolumeClaim:
+        claimName: borg-backup-client-etc-borgmatic-pvc
+    - name: borg-backup-client-ssh-volume
+      persistentVolumeClaim:
+        claimName: borg-backup-client-ssh-pvc
+    - name: dyndns-https-volume
+      persistentVolumeClaim:
+        claimName: dyndns-https-pvc
+    - name: ldap-volume
+      persistentVolumeClaim:
+        claimName: ldap-pvc
+    - name: nextcloud-volume
+      persistentVolumeClaim:
+        claimName: nextcloud-pvc
+    - name: postgresql-volume
+      persistentVolumeClaim:
+        claimName: postgresql-pvc

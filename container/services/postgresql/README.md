@@ -24,6 +24,7 @@ A database
    podman secret create postgresql-secret postgresql-secret.json
    systemctl --user enable --now podman-kube@$(systemd-escape $(pwd)/postgresql-pod.yaml).service
    ```
+3. [Add the persistent volumes to the borg backup client](../../../container/services/borg-backup/client/README.md)
 
 ### Upgrade instructions
 

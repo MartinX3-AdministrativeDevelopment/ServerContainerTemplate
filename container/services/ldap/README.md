@@ -26,3 +26,4 @@ A LDAP server using 389 DS
    dsconf localhost backend create --be-name userRoot --suffix dc=exploding-hamster,dc=duckdns.org
    dsidm -b dc=exploding-hamster,dc=duckdns.org localhost initialise
    ```
+4. [Add the persistent volumes to the borg backup client](../../../container/services/borg-backup/client/README.md)

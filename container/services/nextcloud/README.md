@@ -54,3 +54,4 @@ Nextcloud server, a safe home for all your data.
                   `(&(|(objectclass=posixAccount))(uid=%uid))`
                   zu
                   `(&(|(objectclass=posixAccount))(uid=%uid)(cn=users))`
+7. [Add the persistent volumes to the borg backup client](../../../container/services/borg-backup/client/README.md)

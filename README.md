@@ -12,7 +12,8 @@ Creating and using a podman server
     3. [Further Steps](base/further-steps/README.md)
 2. Podman services
     1. Borg Backup
-        1. [Server](container/services/borg-backup/server/README.md)
+        1. [Client](container/services/borg-backup/client/README.md)
+        2. [Server](container/services/borg-backup/server/README.md)
     2. [DYNDNS HTTPS IP](container/services/dynds-https-ip/README.md)
     3. [E-Mail SMTP Notification](container/services/notification/README.md)
     4. [LDAP](container/services/ldap/README.md)
