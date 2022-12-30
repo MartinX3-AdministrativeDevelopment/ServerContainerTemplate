@@ -8,7 +8,7 @@ spec:
   restartPolicy: on-failure
   containers:
     - name: server
-      image: docker.io/tgbyte/borg-backup:latest
+      image: docker.io/tgbyte/borg-backup:1.2.3
       imagePullPolicy: always
       env:
         - name: BORG_AUTHORIZED_KEYS
