@@ -34,6 +34,9 @@ spec:
           mountPath: /etc/borgmatic.d/
         - name: borg-backup-client-ssh-volume
           mountPath: /root/.ssh
+        - name: ci-drone.io-server-data-volume
+          mountPath: /mnt/source/ci-drone.io-server-data
+          readOnly: true
         - name: dyndns-https-volume
           mountPath: /mnt/source/dyndns-https
           readOnly: true
@@ -59,6 +62,9 @@ spec:
     - name: borg-backup-client-ssh-volume
       persistentVolumeClaim:
         claimName: borg-backup-client-ssh-pvc
+    - name: ci-drone.io-server-data-volume
+      persistentVolumeClaim:
+        claimName: ci-drone.io-server-data-pvc
     - name: dyndns-https-volume
       persistentVolumeClaim:
         claimName: dyndns-https-pvc
