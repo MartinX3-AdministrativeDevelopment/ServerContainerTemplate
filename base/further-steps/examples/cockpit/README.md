@@ -19,7 +19,7 @@ Cockpit is a web-based graphical interface for servers.
    firewall-cmd --reload
    ```
 3. Install files
-    1. Container -> [cockpit.subdomain.conf](cockpit.subdomain.conf)
+    1. https container -> [cockpit.subdomain.conf](cockpit.subdomain.conf)
 4. Restart https container
 5. ```bash
    systemctl enable --now cockpit.socket
