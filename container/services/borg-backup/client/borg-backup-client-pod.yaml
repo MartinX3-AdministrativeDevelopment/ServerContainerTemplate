@@ -8,7 +8,7 @@ spec:
   restartPolicy: on-failure
   containers:
     - name: client
-      image: docker.io/b3vis/borgmatic:msmtp-1.7
+      image: ghcr.io/borgmatic-collective/borgmatic:msmtp-1.7
       imagePullPolicy: always
       env:
         - name: BORG_PASSPHRASE
