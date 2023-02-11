@@ -5,11 +5,11 @@ metadata:
   labels:
     io.containers.autoupdate: registry
 spec:
-  restartPolicy: on-failure
+  restartPolicy: OnFailure
   containers:
     - name: https
       image: ghcr.io/linuxserver/swag:latest
-      imagePullPolicy: always
+      imagePullPolicy: Always
       env:
         - name: DUCKDNSTOKEN
           valueFrom:
@@ -21,16 +21,16 @@ spec:
         - name: PUID
           value: "1000"
         - name: SUBDOMAINS
-          value: "wildcard"
+          value: wildcard
         - name: TZ
-          value: "Europe/Berlin"
+          value: Europe/Berlin
         - name: URL
           valueFrom:
             secretKeyRef:
               name: dyndns-https-ip-secret
               key: URL
         - name: VALIDATION
-          value: "duckdns"
+          value: duckdns
       ports:
         - containerPort: 80
           hostPort: 80
@@ -41,22 +41,46 @@ spec:
           name: https
           protocol: TCP
       resources:
-        requests:
-          cpu: "10m"
-          memory: "128Mi"
         limits:
-          cpu: "100m"
-          memory: "128Mi"
+          cpu: 100m
+          memory: 128Mi
+        requests:
+          cpu: 10m
+          memory: 128Mi
       securityContext:
+        allowPrivilegeEscalation: false
         capabilities:
           add:
+            - CAP_CHOWN
+            - CAP_DAC_OVERRIDE
+            - CAP_FOWNER
+            - CAP_NET_BIND_SERVICE
+            - CAP_SETGID
+            - CAP_SETUID
             - NET_ADMIN
+          drop:
+            - ALL
+        privileged: false
+        runAsGroup: 1000
+        runAsNonRoot: true
+        runAsUser: 0
+        seccompProfile:
+          type: RuntimeDefault
       volumeMounts:
         - name: dyndns-https-volume
           mountPath: /config
+        - name: dyndns-https-configmap-volume
+          mountPath: /config/nginx/proxy-confs/drone.subdomain.conf
+          subPath: drone.subdomain.conf
+        - name: dyndns-https-configmap-volume
+          mountPath: /config/nginx/proxy-confs/nextcloud.subdomain.conf
+          subPath: nextcloud.subdomain.conf
+        - name: dyndns-https-configmap-volume
+          mountPath: /config/nginx/site-confs/www.conf
+          subPath: www.conf
     - name: ip
       image: ghcr.io/linuxserver/duckdns:latest
-      imagePullPolicy: always
+      imagePullPolicy: Always
       env:
         - name: TOKEN
           valueFrom:
@@ -73,15 +97,115 @@ spec:
               name: dyndns-https-ip-secret
               key: SUBDOMAINS
         - name: TZ
-          value: "Europe/Berlin"
+          value: Europe/Berlin
       resources:
-        requests:
-          cpu: "10m"
-          memory: "128Mi"
         limits:
-          cpu: "100m"
-          memory: "128Mi"
+          cpu: 100m
+          memory: 128Mi
+        requests:
+          cpu: 10m
+          memory: 128Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          add:
+            - CAP_CHOWN
+            - CAP_SETGID
+            - CAP_SETUID
+          drop:
+            - ALL
+        privileged: false
+        runAsGroup: 1000
+        runAsNonRoot: true
+        runAsUser: 0
+        seccompProfile:
+          type: RuntimeDefault
   volumes:
     - name: dyndns-https-volume
       persistentVolumeClaim:
         claimName: dyndns-https-pvc
+    - name: dyndns-https-configmap-volume
+      configMap:
+        name: dyndns-https-configmap
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dyndns-https-configmap
+data:
+  drone.subdomain.conf: |
+    # /config/nginx/proxy-confs/drone.subdomain.conf
+    
+    server {
+      listen 443 ssl;
+      listen [::]:443 ssl;
+    
+      server_name drone.*;
+    
+      include /config/nginx/ssl.conf;
+    
+      client_max_body_size 0;
+    
+      # enable for ldap auth (requires ldap-location.conf in the location block)
+      #include /config/nginx/ldap-server.conf;
+    
+      # enable for Authelia (requires authelia-location.conf in the location block)
+      #include /config/nginx/authelia-server.conf;
+    
+      location / {
+        # enable the next two lines for http auth
+        #auth_basic "Restricted";
+        #auth_basic_user_file /config/nginx/.htpasswd;
+
+        # enable for ldap auth (requires ldap-server.conf in the server block)
+        #include /config/nginx/ldap-location.conf;
+
+        # enable for Authelia (requires authelia-server.conf in the server block)
+        #include /config/nginx/authelia-location.conf;
+
+        include /config/nginx/proxy.conf;
+        include /config/nginx/resolver.conf;
+        set $upstream_app ci;
+        set $upstream_port 80;
+        set $upstream_proto http;
+        proxy_pass $upstream_proto://$upstream_app:$upstream_port;
+      }
+    }
+  nextcloud.subdomain.conf: |
+    # /config/nginx/proxy-confs/nextcloud.subdomain.conf
+    
+    server {
+      listen 443 ssl;
+      listen [::]:443 ssl;
+    
+      server_name nextcloud.*;
+    
+      include /config/nginx/ssl.conf;
+    
+      client_max_body_size 0;
+    
+      location / {
+        include /config/nginx/proxy.conf;
+        include /config/nginx/resolver.conf;
+    
+        set $upstream_app nextcloud;
+        set $upstream_port 80;
+        set $upstream_proto http;
+    
+        proxy_pass $upstream_proto://$upstream_app:$upstream_port;
+    
+        proxy_hide_header X-Frame-Options;
+        proxy_max_temp_file_size 2048m;
+      }
+    }
+  www.conf: |
+    # /config/nginx/site-confs/www.conf
+    # redirect 3rd level domain to www 4th level domain
+    # needed for duckdns wildcard certificates
+    # only works with http. with https you'll need a valid certificate.
+    
+    server {
+      server_name exploding-hamster.duckdns.org;
+    
+      return 301 https://www.$server_name$request_uri;
+    }

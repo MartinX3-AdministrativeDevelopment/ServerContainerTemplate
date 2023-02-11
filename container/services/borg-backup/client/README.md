@@ -23,9 +23,10 @@ Not existing volumes will get created, but stay empty.
 2. Start the pod
    ```bash
    podman kube play borg-backup-client-pvc.yaml
-   # podman kube play borg-backup-client-secret.yaml # TODO WORKAROUND FOR https://github.com/containers/podman/issues/16269
-   podman secret create borg-backup-client-secret borg-backup-client-secret.json
-   systemctl --user enable --now podman-kube@$(systemd-escape $(pwd)/borg-backup-client-pod.yaml).service
+   podman kube play borg-backup-client-secret.yaml
+   cp borg-backup-client-pod.kube ~/.config/containers/systemd/
+   systemctl --user daemon-reload
+   systemctl --user start borg-backup-client-pod.service
    ```
 3. Inside the pod
    ```bash
@@ -35,7 +36,6 @@ Not existing volumes will get created, but stay empty.
     1. `borg init --encryption=repokey-blake2 /var/backups/borg/exploding-hamster.duckdns.org`
     2. `borg key export /var/backups/borg/exploding-hamster.duckdns.org`
     3. Add the client ssh key in `/root/.ssh` to the container secret of the borg-backup-server
-5. [Configure the mail notification inside the pod](msmtp.env)
-6. Inside the pod add to the `/etc/borgmatic.d/config.yaml` your repo
+5. Inside the pod add to the `/etc/borgmatic.d/config.yaml` your repo
     - Example: `ssh://borg@exploding-hamster.duckdns.org:26351/var/backups/borg/exploding-hamster.duckdns.org`
-7. Restart the pod
+6. Restart the pod

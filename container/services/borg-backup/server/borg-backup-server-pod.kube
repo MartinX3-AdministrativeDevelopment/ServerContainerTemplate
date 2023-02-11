@@ -1,0 +1,12 @@
+# ~/.config/containers/systemd/borg-backup-server-pod.kube
+
+[Install]
+WantedBy=default.target
+
+[Kube]
+Yaml=/opt/podman/ServerContainerTemplate/container/services/borg-backup/server/borg-backup-server-pod.yaml
+
+[Unit]
+After=dyndns-https-ip-pod.service
+Description=Borg Backup Server
+Wants=dyndns-https-ip-pod.service

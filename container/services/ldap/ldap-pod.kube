@@ -1,0 +1,12 @@
+# ~/.config/containers/systemd/ldap-pod.kube
+
+[Install]
+WantedBy=default.target
+
+[Kube]
+Yaml=/opt/podman/ServerContainerTemplate/container/services/ldap/ldap-pod.yaml
+
+[Unit]
+After=network-online.target
+Description=A LDAP server using 389 DS
+Wants=network-online.target

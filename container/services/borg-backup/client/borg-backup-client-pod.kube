@@ -1,0 +1,12 @@
+# ~/.config/containers/systemd/borg-backup-client-pod.kube
+
+[Install]
+WantedBy=default.target
+
+[Kube]
+Yaml=/opt/podman/ServerContainerTemplate/container/services/borg-backup/client/borg-backup-client-pod.yaml
+
+[Unit]
+After=network-online.target
+Description=Borg Backup Client
+Wants=network-online.target

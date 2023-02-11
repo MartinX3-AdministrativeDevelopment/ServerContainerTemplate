@@ -1,0 +1,12 @@
+# ~/.config/containers/systemd/dyndns-https-ip-pod.kube
+
+[Install]
+WantedBy=default.target
+
+[Kube]
+Yaml=/opt/podman/ServerContainerTemplate/container/services/dynds-https-ip/dyndns-https-ip-pod.yaml
+
+[Unit]
+After=network-online.target
+Description=HTTPS & DynDNS support
+Wants=network-online.target

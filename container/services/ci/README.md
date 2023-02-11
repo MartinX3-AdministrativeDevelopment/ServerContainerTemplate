@@ -17,13 +17,13 @@ Drone uses a simple YAML build file, to define and execute build pipelines insid
 ### Installation instructions
 
 1. Follow the [docs](https://docs.drone.io/server/provider/github/)
-2. Install files
-    1. https container -> [drone.subdomain.conf](drone.subdomain.conf)
+2. Config file [drone.subdomain.conf](../dynds-https-ip/dyndns-https-ip-pod.yaml)
 3. Start the pod
    ```bash
-   podman kube play ci-pvc.yaml
-   # podman kube play ci-secret.yaml # TODO WORKAROUND FOR https://github.com/containers/podman/issues/16269
-   podman secret create ci-secret ci-secret.json
-   systemctl --user enable --now podman-kube@$(systemd-escape $(pwd)/ci-pod.yaml).service
+   podman kube play ci-drone.io-pvc.yaml
+   podman kube play ci-drone.io-secret.yaml
+   cp ci-drone.io-pod.kube ~/.config/containers/systemd/
+   systemctl --user daemon-reload
+   systemctl --user start ci-drone.io-pod.service
    ```
 4. [Add the persistent volumes to the borg backup client](../../../container/services/borg-backup/client/README.md)

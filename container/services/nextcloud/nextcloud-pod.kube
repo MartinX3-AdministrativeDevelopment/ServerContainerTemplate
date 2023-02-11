@@ -1,0 +1,12 @@
+# ~/.config/containers/systemd/nextcloud-pod.kube
+
+[Install]
+WantedBy=default.target
+
+[Kube]
+Yaml=/opt/podman/ServerContainerTemplate/container/services/nextcloud/nextcloud-pod.yaml
+
+[Unit]
+After=postgresql-pod.service smtp-gateway-pod.service
+Description=Nextcloud server, a safe home for all your data.
+Wants=postgresql-pod.service smtp-gateway-pod.service

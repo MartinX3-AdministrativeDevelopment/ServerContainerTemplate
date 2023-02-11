@@ -16,11 +16,13 @@ An SMTP gateway for Apprise notifications.
 ### Installation instructions
 
 1. Follow the docs of
-   - [mailrise](https://github.com/YoRyan/mailrise)
-   - [apprise](https://github.com/caronc/apprise)
+    - [mailrise](https://github.com/YoRyan/mailrise)
+    - [apprise](https://github.com/caronc/apprise)
 2. Start the pod
    ```bash
-   systemctl --user enable --now podman-kube@$(systemd-escape $(pwd)/smtp-gateway-pod.yaml).service
+   cp smtp-gateway-pod.kube ~/.config/containers/systemd/
+   systemctl --user daemon-reload
+   systemctl --user start smtp-gateway-pod.service
    ```
 3. Open the firewall
    ```bash

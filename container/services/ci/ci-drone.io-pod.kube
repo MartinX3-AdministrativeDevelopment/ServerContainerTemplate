@@ -1,0 +1,12 @@
+# ~/.config/containers/systemd/ci-drone.io-pod.kube
+
+[Install]
+WantedBy=default.target
+
+[Kube]
+Yaml=/opt/podman/ServerContainerTemplate/container/services/ci/ci-drone.io-pod.yaml
+
+[Unit]
+After=dyndns-https-ip-pod.service
+Description=CI Drone.io
+Wants=dyndns-https-ip-pod.service

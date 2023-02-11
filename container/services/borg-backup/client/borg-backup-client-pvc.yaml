@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: borg-backup-client-borg-cache-pvc
+  name: borg-backup-client-cache-pvc
 spec:
   storageClassName: default
   accessModes:
@@ -15,7 +15,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: borg-backup-client-borg-config-pvc
+  name: borg-backup-client-config-pvc
 spec:
   storageClassName: default
   accessModes:

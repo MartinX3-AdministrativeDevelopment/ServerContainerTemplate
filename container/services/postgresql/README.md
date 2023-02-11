@@ -1,8 +1,6 @@
 # Description
 
-PostgreSQL
-
-A database
+PostgreSQL database server
 
 ## Table of contents
 
@@ -20,9 +18,10 @@ A database
 2. Start the pod
    ```bash
    podman kube play postgresql-pvc.yaml
-   # podman kube play postgresql-secret.yaml # TODO WORKAROUND FOR https://github.com/containers/podman/issues/16269
-   podman secret create postgresql-secret postgresql-secret.json
-   systemctl --user enable --now podman-kube@$(systemd-escape $(pwd)/postgresql-pod.yaml).service
+   podman kube play postgresql-secret.yaml
+   cp postgresql-pod.kube ~/.config/containers/systemd/
+   systemctl --user daemon-reload
+   systemctl --user start postgresql-pod.service
    ```
 3. [Add the persistent volumes to the borg backup client](../../../container/services/borg-backup/client/README.md)
 

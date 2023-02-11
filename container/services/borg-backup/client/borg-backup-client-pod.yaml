@@ -5,11 +5,11 @@ metadata:
   labels:
     io.containers.autoupdate: registry
 spec:
-  restartPolicy: on-failure
+  restartPolicy: OnFailure
   containers:
     - name: client
       image: ghcr.io/borgmatic-collective/borgmatic:msmtp-1.7
-      imagePullPolicy: always
+      imagePullPolicy: Always
       env:
         - name: BORG_PASSPHRASE
           valueFrom:
@@ -17,19 +17,35 @@ spec:
               name: borg-backup-client-secret
               key: BORG_PASSPHRASE
         - name: TZ
-          value: "Europe/Berlin"
+          value: Europe/Berlin
       resources:
-        requests:
-          cpu: "10m"
-          memory: "128Mi"
         limits:
-          cpu: "1000m"
-          memory: "4096Mi"
+          cpu: 1000m
+          memory: 4096Mi
+        requests:
+          cpu: 10m
+          memory: 128Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          add:
+            - CAP_SETGID
+          drop:
+            - ALL
+        privileged: false
+        runAsGroup: 1000
+        runAsNonRoot: true
+        runAsUser: 0
+        seccompProfile:
+          type: RuntimeDefault
       volumeMounts:
-        - name: borg-backup-client-borg-cache-volume
+        - name: borg-backup-client-cache-volume
           mountPath: /root/.cache/borg
-        - name: borg-backup-client-borg-config-volume
+        - name: borg-backup-client-config-volume
           mountPath: /root/.config/borg
+        - name: borg-backup-client-configmap-volume
+          mountPath: /etc/borgmatic.d/msmtp.env
+          subPath: msmtp.env
         - name: borg-backup-client-etc-borgmatic-volume
           mountPath: /etc/borgmatic.d/
         - name: borg-backup-client-ssh-volume
@@ -50,12 +66,15 @@ spec:
           mountPath: /mnt/source/postgresql
           readOnly: true
   volumes:
-    - name: borg-backup-client-borg-cache-volume
+    - name: borg-backup-client-cache-volume
       persistentVolumeClaim:
-        claimName: borg-backup-client-borg-cache-pvc
-    - name: borg-backup-client-borg-config-volume
+        claimName: borg-backup-client-cache-pvc
+    - name: borg-backup-client-config-volume
       persistentVolumeClaim:
-        claimName: borg-backup-client-borg-config-pvc
+        claimName: borg-backup-client-config-pvc
+    - name: borg-backup-client-configmap-volume
+      configMap:
+        name: borg-backup-client-configmap
     - name: borg-backup-client-etc-borgmatic-volume
       persistentVolumeClaim:
         claimName: borg-backup-client-etc-borgmatic-pvc
@@ -77,3 +96,27 @@ spec:
     - name: postgresql-volume
       persistentVolumeClaim:
         claimName: postgresql-pvc
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: borg-backup-client-configmap
+data:
+  msmtp.env: |
+    # /etc/borgmatic.d/msmtp.env
+    
+    MAIL_RELAY_HOST=smtp
+    MAIL_PORT=8025
+    
+    # smtp auth method: on,off,login...
+    MAIL_AUTH_METHOD=off
+    
+    # set tls on, off
+    MAIL_TLS=off
+    
+    # set starttls on, off
+    MAIL_STARTTLS=off
+    
+    MAIL_FROM=borg-backup-client@exploding-hamster.duckdns.org
+    MAIL_TO=borg-backup-client@exploding-hamster.duckdns.org
+    MAIL_SUBJECT="Borg backup of server exploding-hamster.duckdns.org"

@@ -1,0 +1,12 @@
+# ~/.config/containers/systemd/postgresql-pod.kube
+
+[Install]
+WantedBy=default.target
+
+[Kube]
+Yaml=/opt/podman/ServerContainerTemplate/container/services/postgresql/postgresql-pod.yaml
+
+[Unit]
+After=ldap-pod.service
+Description=PostgreSQL database server
+Wants=ldap-pod.service

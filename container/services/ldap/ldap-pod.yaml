@@ -5,18 +5,30 @@ metadata:
   labels:
     io.containers.autoupdate: registry
 spec:
-  restartPolicy: on-failure
+  restartPolicy: OnFailure
   containers:
     - name: 389ds
-      image: docker.io/389ds/dirsrv:2.2
-      imagePullPolicy: always
+      image: quay.io/389ds/dirsrv:latest
+      imagePullPolicy: Always
       resources:
-        requests:
-          cpu: "10m"
-          memory: "256Mi"
         limits:
-          cpu: "100m"
-          memory: "1024Mi"
+          cpu: 100m
+          memory: 1024Mi
+        requests:
+          cpu: 10m
+          memory: 256Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
+        privileged: false
+        readOnlyRootFilesystem: true
+        runAsGroup: 1000
+        runAsNonRoot: true
+        runAsUser: 389
+        seccompProfile:
+          type: RuntimeDefault
       volumeMounts:
         - name: ldap-volume
           mountPath: /data

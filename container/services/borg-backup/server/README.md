@@ -11,7 +11,7 @@ Deduplicating archiver with compression and authenticated encryption.
 
 ### Service requirements
 
-- [Server](../../../../base/operating-system)
+- [DNS](../../../../container/services/dynds-https-ip/README.md)
 
 ### Installation instructions
 
@@ -21,9 +21,10 @@ Deduplicating archiver with compression and authenticated encryption.
 2. Start the pod
    ```bash
    podman kube play borg-backup-server-pvc.yaml
-   # podman kube play borg-backup-server-secret.yaml # TODO WORKAROUND FOR https://github.com/containers/podman/issues/16269
-   podman secret create borg-backup-server-secret borg-backup-server-secret.json
-   systemctl --user enable --now podman-kube@$(systemd-escape $(pwd)/borg-backup-server-pod.yaml).service
+   podman kube play borg-backup-server-secret.yaml
+   cp borg-backup-server-pod.kube ~/.config/containers/systemd/
+   systemctl --user daemon-reload
+   systemctl --user start borg-backup-server-pod.service
    ```
 3. Install files
     1. Host -> [borg-backup-server.xml](borg-backup-server.xml)

@@ -11,8 +11,8 @@ Nextcloud server, a safe home for all your data.
 
 ### Service requirements
 
-- [SMTP gateway](../notification/README.md)
 - [Database](../postgresql/README.md)
+- [SMTP gateway](../notification/README.md)
 
 ### Installation instructions
 
@@ -36,12 +36,13 @@ Nextcloud server, a safe home for all your data.
 4. Start the pod
    ```bash
    podman kube play nextcloud-pvc.yaml
-   # podman kube play nextcloud-secret.yaml # TODO WORKAROUND FOR https://github.com/containers/podman/issues/16269
-   podman secret create nextcloud-secret nextcloud-secret.json
-   systemctl --user enable --now podman-kube@$(systemd-escape $(pwd)/nextcloud-pod.yaml).service
+   podman kube play nextcloud-secret.yaml
+   cp nextcloud-pod.kube ~/.config/containers/systemd/
+   systemctl --user daemon-reload
+   systemctl --user start nextcloud-pod.service
    ```
 5. Setup https container
-    1. [nextcloud.subdomain.conf](nextcloud.subdomain.conf)
+    1. [nextcloud.subdomain.conf](../dynds-https-ip/dyndns-https-ip-pod.yaml)
     2. Restart it
 6. Setup [LDAP](https://docs.nextcloud.com/server/latest/admin_manual/configuration_user/user_auth_ldap.html)
     - Host: ldap

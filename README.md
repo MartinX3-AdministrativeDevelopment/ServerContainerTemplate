@@ -4,6 +4,7 @@ Creating and using a podman server
 
 ## Table of contents
 
+1. [Requirements](#requirements)
 1. Base
     1. Operating System
         - [Arch Linux Server](base/operating-system/linux/arch/README.md)
@@ -22,3 +23,12 @@ Creating and using a podman server
     7. [Postgresql Database](container/services/postgresql/README.md)
 3. Podman maintenance services
     1. N/A
+
+## Requirements
+
+1. ```bash
+    sudo mkdir -p /opt/podman/ServerContainerTemplate
+    sudo chown user:group -R /opt/podman/ServerContainerTemplate
+    git clone https://github.com/MartinX3-AdministrativeDevelopment/ServerContainerTemplate.git /opt/podman/ServerContainerTemplate
+    ```
+2. Add your changes

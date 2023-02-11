@@ -5,35 +5,48 @@ metadata:
   labels:
     io.containers.autoupdate: registry
 spec:
-  restartPolicy: on-failure
+  restartPolicy: OnFailure
   containers:
     - name: postgresql
       image:
         docker.io/bitnami/postgresql:15
-      imagePullPolicy: always
+      imagePullPolicy: Always
       env:
         - name: POSTGRESQL_ENABLE_LDAP
-          value: "yes"
+          value: yes
         - name: POSTGRESQL_LDAP_BASE_DN
-          value: "dc=exploding-hamster,dc=duckdns.org"
+          value: dc=exploding-hamster,dc=duckdns.org
         - name: POSTGRESQL_LDAP_PORT
-          value: 3389
+          value: "3389"
         - name: POSTGRESQL_LDAP_SEARCH_FILTER
-          value: "(&(uid=$username)(cn=databases))"
+          value: (&(uid=$username)(cn=databases))
         - name: POSTGRESQL_LDAP_SERVER
-          value: "ldap"
+          value: ldap
         - name: POSTGRESQL_PASSWORD
           valueFrom:
             secretKeyRef:
               name: postgresql-secret
               key: POSTGRESQL_PASSWORD
       resources:
-        requests:
-          cpu: "10m"
-          memory: "128Mi"
         limits:
-          cpu: "250m"
-          memory: "1024Mi"
+          cpu: 250m
+          memory: 1024Mi
+        requests:
+          cpu: 10m
+          memory: 128Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          add:
+            - CAP_DAC_OVERRIDE
+          drop:
+            - ALL
+        privileged: false
+        runAsGroup: 1000
+        runAsNonRoot: true
+        runAsUser: 0
+        seccompProfile:
+          type: RuntimeDefault
       volumeMounts:
         - name: postgresql-volume
           mountPath: /bitnami/postgresql

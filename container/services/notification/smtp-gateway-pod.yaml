@@ -5,27 +5,53 @@ metadata:
   labels:
     io.containers.autoupdate: registry
 spec:
-  restartPolicy: on-failure
+  restartPolicy: OnFailure
   containers:
     - name: gateway
       image: docker.io/yoryan/mailrise:latest
-      imagePullPolicy: always
+      imagePullPolicy: Always
       ports:
         - containerPort: 8025
           hostPort: 25
           name: smtp
           protocol: TCP
       resources:
-        requests:
-          cpu: "10m"
-          memory: "128Mi"
         limits:
-          cpu: "100m"
-          memory: "128Mi"
+          cpu: 100m
+          memory: 128Mi
+        requests:
+          cpu: 10m
+          memory: 128Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
+        privileged: false
+        readOnlyRootFilesystem: true
+        runAsGroup: 1000
+        runAsNonRoot: true
+        runAsUser: 999
+        seccompProfile:
+          type: RuntimeDefault
       volumeMounts:
-        - name: mailrise.conf-hostpath
+        - name: smtp-gateway-configmap-volume
           mountPath: /etc/mailrise.conf
+          subPath: mailrise.conf
   volumes:
-    - name: mailrise.conf-hostpath
-      hostPath:
-        path: ./mailrise.conf # Change to bash output of $(pwd)/mailrise.conf
+    - name: smtp-gateway-configmap-volume
+      configMap:
+        name: smtp-gateway-configmap
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: smtp-gateway-configmap
+data:
+  mailrise.conf: |
+    # /etc/mailrise.conf
+
+    configs:
+      "*@exploding-hamster.duckdns.org":
+        urls:
+          - tgram://{bot_token}/{chat_id}/?overflow=split

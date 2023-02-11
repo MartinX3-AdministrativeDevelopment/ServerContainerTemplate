@@ -1,0 +1,12 @@
+# ~/.config/containers/systemd/smtp-gateway-pod.kube
+
+[Install]
+WantedBy=default.target
+
+[Kube]
+Yaml=/opt/podman/ServerContainerTemplate/container/services/notification/smtp-gateway-pod.yaml
+
+[Unit]
+After=dyndns-https-ip-pod.service
+Description=SMTP Notification Service
+Wants=dyndns-https-ip-pod.service
