@@ -66,30 +66,27 @@ podman-docker package.
 ### Maintenance Tips
 
 1. Bash autocompletion
-2. Automatically clean kernel modules
-    1. `paru -Syu kernel-modules-hook`
-    2. `systemctl enable --now linux-modules-cleanup.service`
-3. [Health status of the storage](https://wiki.archlinux.org/title/S.M.A.R.T.)
+2. [Health status of the storage](https://wiki.archlinux.org/title/S.M.A.R.T.)
     1. Automatic email if problems happen
-4. [RAID health](https://wiki.archlinux.org/title/RAID#RAID_Maintenance)
+3. [RAID health](https://wiki.archlinux.org/title/RAID#RAID_Maintenance)
     1. [Automatic email if problems happen](https://wiki.archlinux.org/title/RAID#Email_notifications)
     2. Prefer filesystem native RAID support like RAID 1 on BTRFS
     3. Send an email if an error happens
         - https://aur.archlinux.org/packages/journalcheck
         - https://github.com/lynix/journalcheck
-5. Filesystem health (Example [BTRFS](https://wiki.archlinux.org/title/btrfs)
+4. Filesystem health (Example [BTRFS](https://wiki.archlinux.org/title/btrfs)
    & [btrfsmaintenance](https://aur.archlinux.org/packages/btrfsmaintenance/))
     1. Automatic email if problems happen
-6. [Notification about system updates](examples/notify_system_updates)
-7. [Notification about failed systemd services](https://wiki.archlinux.org/title/Systemd#Notifying_about_failed_services)
+5. [Notification about system updates](examples/notify_system_updates)
+6. [Notification about failed systemd services](https://wiki.archlinux.org/title/Systemd#Notifying_about_failed_services)
     1. [Notification script](examples/systemd-failure-notification.sh)
     2. Do the same for the rootless user (~/.config/systemd/user/service.d/toplevel-override.conf etc.)
-8. [Prune unused images/-tags to free up disk space](examples/podman/prune)
-9. Displaying information & updatable packages on (ssh) login
+7. [Prune unused images/-tags to free up disk space](examples/podman/prune)
+8. Displaying information & updatable packages on (ssh) login
     1. [Example motd generation files.](examples/motd)
         1. Needs package `lm_sensors`
-10. Web based server interface [Cockpit](./examples/cockpit/README.md)
-11. Backup [ESP](./examples/backup/99-esp-backup.hook) & [XBOOTLDR](./examples/backup/99-xbootldr-backup.hook) partition
+9. Web based server interface [Cockpit](./examples/cockpit/README.md)
+10. Backup [ESP](./examples/backup/99-esp-backup.hook) & [XBOOTLDR](./examples/backup/99-xbootldr-backup.hook) partition
     - Don't use a RAID. The ESP partition is modified by UEFI and the XBOOTLDR Partition is modified by the bootloader
       for the bootcounter).
       UEFI and Bootloader don't understand a RAID and will turn it async.
