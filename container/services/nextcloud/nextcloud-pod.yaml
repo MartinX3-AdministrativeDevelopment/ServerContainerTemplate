@@ -48,7 +48,7 @@ spec:
         - name: SMTP_HOST
           value: smtp
         - name: SMTP_PORT
-          value: "25"
+          value: "8025"
         - name: TRUSTED_PROXIES
           value: dyndns
       resources:
