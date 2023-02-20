@@ -5,13 +5,13 @@ Creating and using a podman server
 ## Table of contents
 
 1. [Requirements](#requirements)
-1. Base
+2. Base
     1. Operating System
         - [Arch Linux Server](base/operating-system/linux/arch/README.md)
         - [Alpine Linux Server](base/operating-system/linux/alpine/README.md)
     2. [IPMI](base/IPMI.md)
     3. [Further Steps](base/further-steps/README.md)
-2. Podman services
+3. Podman services
     1. Borg Backup
         1. [Client](container/services/borg-backup/client/README.md)
         2. [Server](container/services/borg-backup/server/README.md)
@@ -21,7 +21,7 @@ Creating and using a podman server
     5. [LDAP](container/services/ldap/README.md)
     6. [Nextcloud](container/services/nextcloud/README.md)
     7. [Postgresql Database](container/services/database/README.md)
-3. Podman maintenance services
+4. Podman maintenance services
     1. N/A
 
 ## Requirements
