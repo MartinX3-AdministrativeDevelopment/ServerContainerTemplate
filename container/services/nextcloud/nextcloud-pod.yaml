@@ -46,7 +46,7 @@ spec:
         - name: SMTP_AUTHTYPE
           value: PLAIN
         - name: SMTP_HOST
-          value: smtp
+          value: smtp-gateway
         - name: SMTP_PORT
           value: "8025"
         - name: TRUSTED_PROXIES

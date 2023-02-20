@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: smtp
+  name: notification
   labels:
     io.containers.autoupdate: registry
 spec:
   restartPolicy: OnFailure
   containers:
-    - name: gateway
+    - name: smtp-gateway
       image: docker.io/yoryan/mailrise:latest
       imagePullPolicy: Always
       ports:
@@ -35,18 +35,18 @@ spec:
         seccompProfile:
           type: RuntimeDefault
       volumeMounts:
-        - name: smtp-gateway-configmap-volume
+        - name: notification-smtp-gateway-configmap-volume
           mountPath: /etc/mailrise.conf
           subPath: mailrise.conf
   volumes:
-    - name: smtp-gateway-configmap-volume
+    - name: notification-smtp-gateway-configmap-volume
       configMap:
-        name: smtp-gateway-configmap
+        name: notification-smtp-gateway-configmap
 ---
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: smtp-gateway-configmap
+  name: notification-smtp-gateway-configmap
 data:
   mailrise.conf: |
     # /etc/mailrise.conf
