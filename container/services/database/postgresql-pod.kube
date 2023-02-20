@@ -4,7 +4,7 @@
 WantedBy=default.target
 
 [Kube]
-Yaml=/opt/podman/ServerContainerTemplate/container/services/postgresql/postgresql-pod.yaml
+Yaml=/opt/podman/ServerContainerTemplate/container/services/database/postgresql-pod.yaml
 
 [Unit]
 After=ldap-pod.service

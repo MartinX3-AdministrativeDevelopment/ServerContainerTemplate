@@ -11,7 +11,7 @@ Nextcloud server, a safe home for all your data.
 
 ### Service requirements
 
-- [Database](../postgresql/README.md)
+- [Database](../database/README.md)
 - [SMTP gateway](../notification/README.md)
 
 ### Installation instructions

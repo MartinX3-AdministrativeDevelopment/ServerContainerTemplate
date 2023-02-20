@@ -20,7 +20,7 @@ Creating and using a podman server
     4. [E-Mail SMTP Notification](container/services/notification/README.md)
     5. [LDAP](container/services/ldap/README.md)
     6. [Nextcloud](container/services/nextcloud/README.md)
-    7. [Postgresql Database](container/services/postgresql/README.md)
+    7. [Postgresql Database](container/services/database/README.md)
 3. Podman maintenance services
     1. N/A
 
