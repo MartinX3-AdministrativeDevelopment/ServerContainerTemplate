@@ -33,7 +33,7 @@ spec:
           drop:
             - ALL
         privileged: false
-        runAsGroup: 1000
+        runAsGroup: 0
         runAsNonRoot: true
         runAsUser: 0
         seccompProfile:
@@ -65,6 +65,8 @@ spec:
         - name: postgresql-volume
           mountPath: /mnt/source/postgresql
           readOnly: true
+  securityContext:
+    fsGroup: 0
   volumes:
     - name: borg-backup-client-cache-volume
       persistentVolumeClaim:

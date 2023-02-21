@@ -48,7 +48,7 @@ spec:
         privileged: false
         runAsGroup: 1000
         runAsNonRoot: true
-        runAsUser: 0
+        runAsUser: 1000
         seccompProfile:
           type: RuntimeDefault
       volumeMounts:
