@@ -29,6 +29,7 @@ spec:
         allowPrivilegeEscalation: false
         capabilities:
           add:
+            - CAP_DAC_READ_SEARCH
             - CAP_SETGID
           drop:
             - ALL
@@ -65,8 +66,6 @@ spec:
         - name: postgresql-volume
           mountPath: /mnt/source/postgresql
           readOnly: true
-  securityContext:
-    fsGroup: 0
   volumes:
     - name: borg-backup-client-cache-volume
       persistentVolumeClaim:
