@@ -70,9 +70,9 @@ spec:
           drop:
             - ALL
         privileged: false
-        runAsGroup: 0
+        runAsGroup: 33
         runAsNonRoot: true
-        runAsUser: 0
+        runAsUser: 33
         seccompProfile:
           type: RuntimeDefault
       volumeMounts:
