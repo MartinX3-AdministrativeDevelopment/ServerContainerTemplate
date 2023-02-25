@@ -10,6 +10,17 @@ spec:
     - name: 389ds
       image: quay.io/389ds/dirsrv:latest
       imagePullPolicy: Always
+      env:
+        - name: DS_DM_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: ldap-secret
+              key: DS_DM_PASSWORD
+        - name: DS_SUFFIX_NAME
+          valueFrom:
+            secretKeyRef:
+              name: ldap-secret
+              key: DS_SUFFIX_NAME
       resources:
         limits:
           cpu: 100m

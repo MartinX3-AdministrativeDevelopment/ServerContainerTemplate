@@ -19,6 +19,7 @@ A LDAP server using 389 DS
 2. Start the pod
    ```bash
    podman kube play ldap-pvc.yaml
+   podman kube play ldap-secret.yaml
    cp ldap-pod.kube ~/.config/containers/systemd/
    systemctl --user daemon-reload
    systemctl --user start ldap-pod.service
