@@ -24,9 +24,12 @@ A LDAP server using 389 DS
    systemctl --user daemon-reload
    systemctl --user start ldap-pod.service
    ```
-3. Configuration inside pod
+3. Wait until the container logs show `INFO: 389-ds-container started.` on the first startup.
+   This may take a while.
+   Do not wait until `DEBUG:  🎉 Instance setup complete`, which is too early.
+4. Configuration inside pod
    ```bash
-   dsconf localhost backend create --be-name userRoot --suffix dc=exploding-hamster,dc=duckdns.org
-   dsidm -b dc=exploding-hamster,dc=duckdns.org localhost initialise
+   dsconf --binddn "cn=Directory Manager" --bindpw ${DS_DM_PASSWORD} localhost backend create --be-name userRoot --suffix ${DS_SUFFIX_NAME}
+   dsidm --basedn ${DS_SUFFIX_NAME} --binddn "cn=Directory Manager" --bindpw ${DS_DM_PASSWORD} localhost initialise
    ```
-4. [Add the persistent volumes to the borg backup client](../../../container/services/borg-backup/client/README.md)
+5. [Add the persistent volumes to the borg backup client](../../../container/services/borg-backup/client/README.md)

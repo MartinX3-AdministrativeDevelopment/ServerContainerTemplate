@@ -22,12 +22,12 @@ Nextcloud server, a safe home for all your data.
     - https://github.com/linuxserver/docker-nextcloud
 2. Configuration inside ldap pod
    ```bash
-   dsidm -b dc=exploding-hamster,dc=duckdns.org localhost user create --uid nextcloud_db --cn databases --displayName "Nextcloud Database" --uidNumber 1001 --gidNumber 1001 --homeDirectory /home/nextcloud_db
-   dsidm -b dc=exploding-hamster,dc=duckdns.org localhost account reset_password uid=nextcloud_db,ou=people,dc=exploding-hamster,dc=duckdns.org
+   dsidm --basedn ${DS_SUFFIX_NAME} --binddn "cn=Directory Manager" --bindpw ${DS_DM_PASSWORD} localhost user create --uid nextcloud_db --cn databases --displayName "Nextcloud Database" --uidNumber 1001 --gidNumber 1001 --homeDirectory /home/nextcloud_db
+   dsidm --basedn ${DS_SUFFIX_NAME} --binddn "cn=Directory Manager" --bindpw ${DS_DM_PASSWORD} localhost account reset_password uid=nextcloud_db,ou=people,${DS_SUFFIX_NAME}
    
    # Add nextcloud accounts as needed
-   dsidm -b dc=exploding-hamster,dc=duckdns.org localhost user create --uid username --cn users --displayName "Max Mustermann" --uidNumber 1002 --gidNumber 1002 --homeDirectory /home/username
-   dsidm -b dc=exploding-hamster,dc=duckdns.org localhost account reset_password uid=username,ou=people,dc=exploding-hamster,dc=duckdns.org
+   dsidm --basedn ${DS_SUFFIX_NAME} --binddn "cn=Directory Manager" --bindpw ${DS_DM_PASSWORD} localhost user create --uid username --cn users --displayName "Max Mustermann" --uidNumber 1002 --gidNumber 1002 --homeDirectory /home/username
+   dsidm --basedn ${DS_SUFFIX_NAME} --binddn "cn=Directory Manager" --bindpw ${DS_DM_PASSWORD} localhost account reset_password uid=username,ou=people,${DS_SUFFIX_NAME}
    ```
 3. Configuration inside database pod
    ```bash

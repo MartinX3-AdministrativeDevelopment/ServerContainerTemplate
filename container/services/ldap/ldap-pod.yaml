@@ -31,6 +31,8 @@ spec:
       securityContext:
         allowPrivilegeEscalation: false
         capabilities:
+          add:
+            - CAP_DAC_READ_SEARCH
           drop:
             - ALL
         privileged: false
