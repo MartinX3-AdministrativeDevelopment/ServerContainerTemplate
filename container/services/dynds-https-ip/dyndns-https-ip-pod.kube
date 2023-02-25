@@ -6,6 +6,9 @@ WantedBy=default.target
 [Kube]
 Yaml=/opt/podman/ServerContainerTemplate/container/services/dynds-https-ip/dyndns-https-ip-pod.yaml
 
+[Service]
+TimeoutStartSec=180
+
 [Unit]
 After=network-online.target
 Description=HTTPS & DynDNS support
