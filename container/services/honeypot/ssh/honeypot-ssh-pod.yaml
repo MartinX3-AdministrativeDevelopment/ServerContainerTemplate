@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: honeypot
+  labels:
+    io.containers.autoupdate: registry
+spec:
+  restartPolicy: OnFailure
+  containers:
+    - name: ssh
+      image: lscr.io/linuxserver/endlessh:latest
+      imagePullPolicy: Always
+      env:
+        - name: PGID
+          value: "1000"
+        - name: PUID
+          value: "1000"
+        - name: TZ
+          value: "Etc/UTC"
+      ports:
+        - containerPort: 2222
+          hostPort: 22
+          name: ssh
+          protocol: TCP
+      resources:
+        limits:
+          cpu: 10m
+          memory: 128Mi
+        requests:
+          cpu: 1m
+          memory: 64Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          add:
+            - CAP_CHOWN
+            - CAP_SETGID
+            - CAP_SETUID
+          drop:
+            - ALL
+        privileged: false
+        runAsNonRoot: true
+        seccompProfile:
+          type: RuntimeDefault

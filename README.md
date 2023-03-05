@@ -18,9 +18,11 @@ Creating and using a podman server
     2. [CI](container/services/ci/README.md)
     3. [DYNDNS HTTPS IP](container/services/dynds-https-ip/README.md)
     4. [E-Mail SMTP Notification](container/services/notification/README.md)
-    5. [LDAP](container/services/ldap/README.md)
-    6. [Nextcloud](container/services/nextcloud/README.md)
-    7. [Postgresql Database](container/services/database/README.md)
+    5. Honeypot
+        1. [SSH](container/services/honeypot/ssh/README.md)
+    6. [LDAP](container/services/ldap/README.md)
+    7. [Nextcloud](container/services/nextcloud/README.md)
+    8. [Postgresql Database](container/services/database/README.md)
 4. Podman maintenance services
     1. N/A
 

@@ -1,0 +1,15 @@
+# ~/.config/containers/systemd/honeypot-ssh-pod.kube
+
+[Install]
+WantedBy=default.target
+
+[Kube]
+Yaml=/opt/podman/ServerContainerTemplate/container/services/honeypot/ssh/honeypot-ssh-pod.yaml
+
+[Service]
+TimeoutStartSec=180
+
+[Unit]
+After=network-online.target
+Description=SSH HoneyPot
+Wants=network-online.target
