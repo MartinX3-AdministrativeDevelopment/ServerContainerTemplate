@@ -8,7 +8,7 @@ spec:
   restartPolicy: OnFailure
   containers:
     - name: server
-      image: docker.io/tgbyte/borg-backup:1.2.3
+      image: docker.io/horaceworblehat/borg-server:1.6.0
       imagePullPolicy: Always
       env:
         - name: BORG_AUTHORIZED_KEYS
@@ -52,7 +52,7 @@ spec:
           type: RuntimeDefault
       volumeMounts:
         - name: borg-backup-server-backup-volume
-          mountPath: /var/backups/borg
+          mountPath: /home/borg/backups
         - name: borg-backup-server-ssh-keys-volume
           mountPath: /var/lib/docker-borg
   volumes:
