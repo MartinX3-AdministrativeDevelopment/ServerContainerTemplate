@@ -19,7 +19,77 @@ spec:
           value: "Etc/UTC"
       ports:
         - containerPort: 2222
+          hostPort: 20
+          name: ssh
+        - containerPort: 2222
+          hostPort: 21
+          name: ssh
+        - containerPort: 2222
           hostPort: 22
+          name: ssh
+          protocol: TCP
+        - containerPort: 2222
+          hostPort: 990
+          name: ssh
+          protocol: TCP
+        - containerPort: 2222
+          hostPort: 1024
+          name: ssh
+          protocol: TCP
+        - containerPort: 2222
+          hostPort: 1025
+          name: ssh
+          protocol: TCP
+        - containerPort: 2222
+          hostPort: 1026
+          name: ssh
+          protocol: TCP
+        - containerPort: 2222
+          hostPort: 1027
+          name: ssh
+          protocol: TCP
+        - containerPort: 2222
+          hostPort: 1028
+          name: ssh
+          protocol: TCP
+        - containerPort: 2222
+          hostPort: 1029
+          name: ssh
+          protocol: TCP
+        - containerPort: 2222
+          hostPort: 1030
+          name: ssh
+          protocol: TCP
+        - containerPort: 2222
+          hostPort: 2222
+          name: ssh
+          protocol: TCP
+        - containerPort: 2222
+          hostPort: 8443
+          name: ssh
+          protocol: TCP
+        - containerPort: 2222
+          hostPort: 65530
+          name: ssh
+          protocol: TCP
+        - containerPort: 2222
+          hostPort: 65531
+          name: ssh
+          protocol: TCP
+        - containerPort: 2222
+          hostPort: 65532
+          name: ssh
+          protocol: TCP
+        - containerPort: 2222
+          hostPort: 65533
+          name: ssh
+          protocol: TCP
+        - containerPort: 2222
+          hostPort: 65534
+          name: ssh
+          protocol: TCP
+        - containerPort: 2222
+          hostPort: 65535
           name: ssh
           protocol: TCP
       resources:
