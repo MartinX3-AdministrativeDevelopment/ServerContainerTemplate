@@ -8,7 +8,7 @@ spec:
   restartPolicy: OnFailure
   containers:
     - name: smtp-gateway
-      image: docker.io/yoryan/mailrise:latest@sha256:8a628d00bd536bfc64b45a06088f74a6d82e4accc4faef82733bd14107ab6e1e
+      image: ghcr.io/yoryan/mailrise:1.4.0
       imagePullPolicy: Always
       ports:
         - containerPort: 8025
