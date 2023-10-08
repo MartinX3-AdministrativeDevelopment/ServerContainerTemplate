@@ -8,7 +8,7 @@ spec:
   restartPolicy: OnFailure
   containers:
     - name: client
-      image: ghcr.io/borgmatic-collective/borgmatic:msmtp-1.7
+      image: ghcr.io/borgmatic-collective/borgmatic:msmtp-1.7@sha256:736c44f00ff70245934cbdf7810d71aed5ccb6999988fff8b2584570f1568429
       imagePullPolicy: Always
       env:
         - name: BORG_PASSPHRASE

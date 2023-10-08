@@ -8,7 +8,7 @@ spec:
   restartPolicy: OnFailure
   containers:
     - name: https
-      image: ghcr.io/linuxserver/swag:latest
+      image: ghcr.io/linuxserver/swag:latest@sha256:d7bd284c3dac91616d6ca56134380d41ee3df8552b8550e0df0717721359f5a7
       imagePullPolicy: Always
       env:
         - name: DUCKDNSTOKEN
@@ -79,7 +79,7 @@ spec:
           mountPath: /config/nginx/site-confs/www.conf
           subPath: www.conf
     - name: ip
-      image: ghcr.io/linuxserver/duckdns:latest
+      image: ghcr.io/linuxserver/duckdns:latest@sha256:764d89a3ae9fc02c1f6c0e86bb94f52a06a2a6efb6c19baa6dfc3895123ac344
       imagePullPolicy: Always
       env:
         - name: TOKEN
