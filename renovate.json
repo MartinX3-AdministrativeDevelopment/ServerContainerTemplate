@@ -12,6 +12,9 @@
   "lockFileMaintenance": {
     "automerge": true
   },
+  "digest": {
+    "automerge": true
+  },
   "minor": {
     "automerge": true
   },
