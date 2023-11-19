@@ -1,0 +1,6 @@
+# /etc/systemd/system/autoupdater_ServerContainerTemplate.service
+[Unit]
+Description=Updates the ServerContainerTemplate and pushes an error as email if needed
+
+[Service]
+ExecStart=/usr/local/bin/autoupdater_ServerContainerTemplate.sh

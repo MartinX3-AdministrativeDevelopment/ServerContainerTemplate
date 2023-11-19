@@ -1,0 +1,10 @@
+# /etc/systemd/system/autoupdater_ServerContainerTemplate.timer
+[Unit]
+Description=Updates the ServerContainerTemplate and pushes an error as email if needed
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=timers.target
