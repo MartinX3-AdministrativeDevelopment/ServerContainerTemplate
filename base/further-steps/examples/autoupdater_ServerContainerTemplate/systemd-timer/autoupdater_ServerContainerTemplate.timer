@@ -1,4 +1,4 @@
-# /etc/systemd/system/autoupdater_ServerContainerTemplate.timer
+# ~/.config/systemd/user/autoupdater_ServerContainerTemplate.timer
 [Unit]
 Description=Updates the ServerContainerTemplate and pushes an error as email if needed
 
