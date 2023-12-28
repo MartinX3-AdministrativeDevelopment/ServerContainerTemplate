@@ -8,7 +8,7 @@ spec:
   restartPolicy: OnFailure
   containers:
     - name: app
-      image: docker.io/nextcloud:28.0.1@sha256:2607d51180d30bd10bd74479ef7bfb5373f408b03a6966a28bbc3e925fd1c277
+      image: docker.io/nextcloud:28.0.1@sha256:9527f6fa13242f7a104c64e21dfab3a0f396c579d3ec62e574996178670d50b4
       imagePullPolicy: Always
       env:
         - name: APACHE_DISABLE_REWRITE_IP
