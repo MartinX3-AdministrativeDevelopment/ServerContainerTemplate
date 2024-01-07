@@ -1,3 +1,0 @@
-# /etc/crontab
-# Prune unused images/-tags to free up disk space
-0 0 * * * username /usr/bin/podman system prune --all -f

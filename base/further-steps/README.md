@@ -82,7 +82,7 @@ podman-docker package.
 7. [Notification about failed systemd services](https://wiki.archlinux.org/title/Systemd#Notifying_about_failed_services)
     1. [Notification script](examples/systemd-failure-notification.sh)
     2. Do the same for the rootless user (~/.config/systemd/user/service.d/toplevel-override.conf etc.)
-8. [Prune unused images/-tags to free up disk space](examples/podman/prune)
+8. Auto-Update and prune podman images `systemctl --user enable --now podman-auto-update.timer`
 9. Displaying information & updatable packages on (ssh) login
     1. [Example motd generation files.](examples/motd)
         1. Needs package `lm_sensors`
