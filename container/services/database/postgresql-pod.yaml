@@ -9,7 +9,7 @@ spec:
   containers:
     - name: postgresql
       image:
-        docker.io/bitnami/postgresql:15
+        docker.io/bitnami/postgresql:16.1.0
       imagePullPolicy: Always
       env:
         - name: POSTGRESQL_ENABLE_LDAP
