@@ -6,7 +6,7 @@ spec:
   restartPolicy: OnFailure
   containers:
     - name: ssh
-      image: ghcr.io/linuxserver/endlessh:latest@sha256:159fccaa8722d4c3b0850cbf04ad2d61be92310aad49ced18e7703417864a086
+      image: ghcr.io/linuxserver/endlessh:latest@sha256:77c8c29295608c650c9e349e32e9d83fbada0e4243cb518d94f9f3eda5f2aa42
       imagePullPolicy: Always
       env:
         - name: PGID
