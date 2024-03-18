@@ -77,7 +77,7 @@ spec:
           mountPath: /config/nginx/site-confs/www.conf
           subPath: www.conf
     - name: ip
-      image: ghcr.io/linuxserver/duckdns:latest@sha256:a370402192ba74938464abf68c472d6ed27f9532bf25b8b319c185cf14b2f52d
+      image: ghcr.io/linuxserver/duckdns:latest@sha256:dbe0e1bfb329b35a1f2e2fb09f0afe847c4400e693527c98ed1c4e34cfcbb0a9
       imagePullPolicy: Always
       env:
         - name: TOKEN
