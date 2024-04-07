@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: borg-backup
 spec:
+  automountServiceAccountToken: false
   restartPolicy: OnFailure
   containers:
     - name: client

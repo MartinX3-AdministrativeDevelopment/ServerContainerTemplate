@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: dyndns
 spec:
+  automountServiceAccountToken: false
   restartPolicy: OnFailure
   containers:
     - name: https

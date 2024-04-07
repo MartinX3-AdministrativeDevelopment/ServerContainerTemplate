@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: honeypot
 spec:
+  automountServiceAccountToken: false
   restartPolicy: OnFailure
   containers:
     - name: ssh

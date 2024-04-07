@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: database
 spec:
+  automountServiceAccountToken: false
   restartPolicy: OnFailure
   containers:
     - name: postgresql

@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: nextcloud
 spec:
+  automountServiceAccountToken: false
   restartPolicy: OnFailure
   containers:
     - name: app

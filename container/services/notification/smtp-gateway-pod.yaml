@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: notification
 spec:
+  automountServiceAccountToken: false
   restartPolicy: OnFailure
   containers:
     - name: smtp-gateway
