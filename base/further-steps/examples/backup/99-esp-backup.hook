@@ -3,6 +3,8 @@
 [Trigger]
 Type = Package
 Operation = Upgrade
+Target = dracut
+Target = linux-lts
 Target = systemd
 
 [Action]
