@@ -7,7 +7,7 @@ spec:
   restartPolicy: OnFailure
   containers:
     - name: app
-      image: docker.io/nextcloud:28.0.4@sha256:ee6e559f740416b8f34bd1dc8fc9a0f1c90d00800fdfba3b1d493e86ebecd5ae
+      image: lscr.io/linuxserver/nextcloud:28.0.4
       imagePullPolicy: Always
       env:
         - name: APACHE_DISABLE_REWRITE_IP
@@ -31,6 +31,8 @@ spec:
           value: nextcloud.exploding-hamster.duckdns.org
         - name: OVERWRITEPROTOCOL
           value: https
+        - name: PGID
+          value: "1000"
         - name: POSTGRES_DB
           value: nextcloud_db
         - name: POSTGRES_HOST
@@ -42,6 +44,8 @@ spec:
               key: POSTGRES_PASSWORD
         - name: POSTGRES_USER
           value: nextcloud_db
+        - name: PUID
+          value: "1000"
         - name: SMTP_AUTHTYPE
           value: PLAIN
         - name: SMTP_HOST
@@ -50,6 +54,8 @@ spec:
           value: "8025"
         - name: TRUSTED_PROXIES
           value: dyndns
+        - name: TZ
+          value: Europe/Berlin
       resources:
         limits:
           cpu: 750m
@@ -70,15 +76,20 @@ spec:
           drop:
             - ALL
         privileged: false
-        runAsGroup: 33
+        runAsGroup: 1000
         runAsNonRoot: true
-        runAsUser: 33
+        runAsUser: 1000
         seccompProfile:
           type: RuntimeDefault
       volumeMounts:
-        - name: nextcloud-volume
-          mountPath: /var/www/html
+        - name: nextcloud-config-volume
+          mountPath: /config
+        - name: nextcloud-data-volume
+          mountPath: /data
   volumes:
-    - name: nextcloud-volume
+    - name: nextcloud-config-volume
       persistentVolumeClaim:
-        claimName: nextcloud-pvc
+        claimName: nextcloud-config-pvc
+    - name: nextcloud-data-volume
+      persistentVolumeClaim:
+        claimName: nextcloud-data-pvc
