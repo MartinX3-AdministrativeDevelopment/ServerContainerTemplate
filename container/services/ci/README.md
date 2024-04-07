@@ -17,7 +17,7 @@ Drone uses a simple YAML build file to define and execute build pipelines inside
 ### Installation instructions
 
 1. Follow the [docs](https://docs.drone.io/server/provider/github/)
-2. Config file [drone.subdomain.conf](../dynds-https-ip/dyndns-https-ip-pod.yaml)
+2. [Setup https container](../dynds-https-ip/README.md)
 3. Start the pod
    ```bash
    podman kube play ci-drone.io-pvc.yaml

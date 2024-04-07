@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: ci
+  name: drone
 spec:
   automountServiceAccountToken: false
   restartPolicy: OnFailure
@@ -23,7 +23,7 @@ spec:
         - name: DRONE_RUNNER_CAPACITY
           value: "1"
         - name: DRONE_SERVER_HOST
-          value: ci
+          value: drone
         - name: DRONE_SERVER_PROTO
           value: http
       resources:

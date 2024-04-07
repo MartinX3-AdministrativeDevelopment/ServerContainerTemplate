@@ -41,9 +41,7 @@ Nextcloud server, a safe home for all your data.
    systemctl --user daemon-reload
    systemctl --user start nextcloud-pod.service
    ```
-5. Setup https container
-    1. [nextcloud.subdomain.conf](../dynds-https-ip/dyndns-https-ip-pod.yaml)
-    2. Restart it
+5. [Setup https container](../dynds-https-ip/README.md)
 6. Setup [LDAP](https://docs.nextcloud.com/server/latest/admin_manual/configuration_user/user_auth_ldap.html)
     - Host: ldap
     - Port: 3389
