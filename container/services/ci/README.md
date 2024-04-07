@@ -3,7 +3,7 @@
 Drone.io
 
 Drone is a continuous delivery system built on container technology.
-Drone uses a simple YAML build file, to define and execute build pipelines inside Docker containers.
+Drone uses a simple YAML build file to define and execute build pipelines inside Docker containers.
 
 ## Table of contents
 

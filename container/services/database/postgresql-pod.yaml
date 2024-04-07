@@ -12,15 +12,15 @@ spec:
       imagePullPolicy: Always
       env:
         - name: POSTGRESQL_ENABLE_LDAP
-          value: yes
+          value: "yes"
         - name: POSTGRESQL_LDAP_BASE_DN
-          value: dc=exploding-hamster,dc=duckdns.org
+          value: "dc=exploding-hamster,dc=duckdns.org"
         - name: POSTGRESQL_LDAP_PORT
           value: "3389"
         - name: POSTGRESQL_LDAP_SEARCH_FILTER
-          value: (&(uid=$username)(cn=databases))
+          value: "(&(uid=$username)(cn=databases))"
         - name: POSTGRESQL_LDAP_SERVER
-          value: ldap
+          value: "ldap"
         - name: POSTGRESQL_PASSWORD
           valueFrom:
             secretKeyRef:

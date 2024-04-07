@@ -15,7 +15,7 @@ Deduplicating archiver with compression and authenticated encryption.
 
 ### Installation instructions
 
-1. Follow the docs of the
+1. Follow the docs of
     - [Dockerimage](https://hub.docker.com/r/tgbyte/borg-backup)
     - [Borg backup](https://borgbackup.readthedocs.io/en/stable/)
 2. Start the pod

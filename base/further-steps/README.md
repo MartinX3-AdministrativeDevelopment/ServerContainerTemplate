@@ -47,7 +47,11 @@ Universal maintenance tips
 
 #### Podman
 
-Successor of docker. Compatible to docker. Better security. Designed to run rootless. Has a docker API layer with the
+Successor of docker.
+Compatible with docker.
+Better security.
+Designed to run rootless.
+Has a docker API layer with the
 podman-docker package.
 
 - [Installation](https://podman.io/)
@@ -86,7 +90,7 @@ podman-docker package.
 9. Displaying information & updatable packages on (ssh) login
     1. [Example motd generation files.](examples/motd)
         1. Needs package `lm_sensors`
-10. Web based server interface [Cockpit](./examples/cockpit/README.md)
+10. Web-based server interface [Cockpit](./examples/cockpit/README.md)
 11. Backup [ESP](./examples/backup/99-esp-backup.hook) partition
     - Don't use a RAID.
       The ESP partition is modified by the UEFI and the bootloader for the boot counter.

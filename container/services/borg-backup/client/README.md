@@ -4,7 +4,7 @@ Borg Backup Client
 
 Deduplicating archiver with compression and authenticated encryption.
 
-Not existing volumes will get created, but stay empty.
+No existing volumes will get created, but stay empty.
 
 ## Table of contents
 
@@ -17,7 +17,7 @@ Not existing volumes will get created, but stay empty.
 
 ### Installation instructions
 
-1. Follow the docs of the
+1. Follow the docs of
     - [Dockerimage](https://github.com/borgmatic-collective/docker-borgmatic)
     - [Borgmatic](https://torsion.org/borgmatic/)
 2. Start the pod
@@ -35,7 +35,7 @@ Not existing volumes will get created, but stay empty.
 4. Borg Server
     1. `borg init --encryption=repokey-blake2 /var/backups/borg/exploding-hamster.duckdns.org`
     2. `borg key export /var/backups/borg/exploding-hamster.duckdns.org`
-    3. Add the client ssh key in `/root/.ssh` to the container secret of the borg-backup-server
+    3. Add the client ssh-key in `/root/.ssh` to the container secret of the borg-backup-server
 5. Inside the pod add to the `/etc/borgmatic.d/config.yaml` your repo
     - Example: `ssh://borg@exploding-hamster.duckdns.org:26351/var/backups/borg/exploding-hamster.duckdns.org`
 6. Restart the pod

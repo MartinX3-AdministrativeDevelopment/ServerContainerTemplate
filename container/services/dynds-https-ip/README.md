@@ -34,7 +34,7 @@ It also contains fail2ban for intrusion prevention.
    firewall-cmd --zone=public --add-service=https --permanent
    firewall-cmd --reload
    ```
-5. [Add the persistent volumes to the borg backup client](../../../container/services/borg-backup/client/README.md)
+4. [Add the persistent volumes to the borg backup client](../../../container/services/borg-backup/client/README.md)
 
 ### Notes
 

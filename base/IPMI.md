@@ -5,8 +5,8 @@ Using IPMI to remotely install a server OS.
 ## Table of contents
 
 1. [FAQ](#faq)
-   1. [IPMI needs TLS 1.1 and Java 6](#IPMI-needs-TLS-1.1-and-Java-6)
-   2. [Reset IPMI](#reset-IPMI)
+    1. [IPMI needs TLS 1.1 and Java 6](#ipmi-needs-tls-11-and-java-6)
+    2. [Reset IPMI](#reset-IPMI)
 
 ### FAQ
 
@@ -26,5 +26,5 @@ https://github.com/lmacka/ipmi-kvm-docker
 1. Please reboot on rescue mode (as example Ubuntu 18)
 2. Execute `sudo ipmitool mc reset cold`
 3. Wait 5 min
-4. Reboot the server on normal mode
+4. Reboot the server in normal mode
 5. Create a new IPMI session
