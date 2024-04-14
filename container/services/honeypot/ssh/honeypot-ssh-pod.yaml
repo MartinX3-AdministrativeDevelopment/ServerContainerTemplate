@@ -9,6 +9,7 @@ spec:
     - name: ssh
       image: ghcr.io/shizunge/endlessh-go:latest@sha256:08f10370f5842ed726612c3ceb05e1270a2df8f5b843351c32574f6497c13c75
       imagePullPolicy: Always
+      args: [ "logtostderr", "v=1" ]
       ports:
         - containerPort: 2222
           hostPort: 20
