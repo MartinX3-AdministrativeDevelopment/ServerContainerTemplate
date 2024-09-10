@@ -10,4 +10,4 @@ Target = systemd
 [Action]
 Description = Backup ESP to other partition
 When = PostTransaction
-Exec = /usr/bin/sh -c "rm -rf /tmp/99_efifs_b && mkdir /tmp/99_efifs_b && mount /dev/sdb1 /tmp/99_efifs_b && cp -pR /efi/* /tmp/99_efifs_b/ && umount /tmp/99_efifs_b && rm -rf /tmp/99_efifs_b"
+Exec = /usr/bin/sh -c "rm -rf /tmp/99_efifs_b && mkdir /tmp/99_efifs_b && mount /dev/sdb1 /tmp/99_efifs_b && rsync -a --delete /efi/ /tmp/99_efifs_b && umount /tmp/99_efifs_b && rm -rf /tmp/99_efifs_b"
