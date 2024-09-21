@@ -7,7 +7,7 @@ spec:
   restartPolicy: OnFailure
   containers:
     - name: https
-      image: ghcr.io/linuxserver/swag:2.11.0@sha256:dbea7eadc6fd07b62794757bfb2d93bad7a2da65624e36bb0b8b09ce4562de04
+      image: ghcr.io/linuxserver/swag:2.11.0@sha256:27a8b370f772bfcd7b63eb2c9068fd992ad9f2f8c30625080f8db88b81f3c459
       imagePullPolicy: Always
       env:
         - name: DUCKDNSTOKEN
