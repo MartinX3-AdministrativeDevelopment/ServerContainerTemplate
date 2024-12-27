@@ -7,7 +7,7 @@ spec:
   restartPolicy: OnFailure
   containers:
     - name: 389ds
-      image: quay.io/389ds/dirsrv:latest@sha256:f88b7e37c0bfc20c418b0f8056de2c47ce92d34d48e538bc0493ea6d1a9423bd
+      image: quay.io/389ds/dirsrv:latest@sha256:828894071330a4f904f20ba925a3a363c048dbbf3b5bac7d677365db29c8c28c
       imagePullPolicy: Always
       env:
         - name: DS_DM_PASSWORD
