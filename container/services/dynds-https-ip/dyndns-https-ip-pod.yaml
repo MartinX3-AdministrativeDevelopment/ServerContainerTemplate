@@ -4,7 +4,6 @@ metadata:
   name: dyndns
 spec:
   automountServiceAccountToken: false
-  restartPolicy: OnFailure
   containers:
     - name: https
       image: ghcr.io/linuxserver/swag:3.0.1@sha256:a0567586434edcc63c2121661cb8f25f6ab44a8cecb4b2526d973ef6aaa1d26a
@@ -114,6 +113,11 @@ spec:
         runAsUser: 0
         seccompProfile:
           type: RuntimeDefault
+  hostAliases:
+    - ip: "host-gateway"
+      hostnames:
+        - "host.docker.internal"
+  restartPolicy: OnFailure
   volumes:
     - name: dyndns-https-volume
       persistentVolumeClaim:
