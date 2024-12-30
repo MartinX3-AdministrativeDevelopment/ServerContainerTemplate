@@ -5,6 +5,33 @@ metadata:
 spec:
   automountServiceAccountToken: false
   containers:
+    - name: dnsmasq
+      image: docker.io/4km3/dnsmasq:2.90-r3
+      imagePullPolicy: Always
+      resources:
+        limits:
+          cpu: 100m
+          ephemeral-storage: 100Mi
+          memory: 128Mi
+        requests:
+          cpu: 10m
+          memory: 128Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          add:
+            - CAP_SETGID
+            - CAP_SETUID
+            - CAP_NET_BIND_SERVICE
+            - NET_ADMIN
+          drop:
+            - ALL
+        privileged: false
+        runAsGroup: 0
+        runAsNonRoot: true
+        runAsUser: 0
+        seccompProfile:
+          type: RuntimeDefault
     - name: https
       image: ghcr.io/linuxserver/swag:3.0.1@sha256:a0567586434edcc63c2121661cb8f25f6ab44a8cecb4b2526d973ef6aaa1d26a
       imagePullPolicy: Always
@@ -113,10 +140,6 @@ spec:
         runAsUser: 0
         seccompProfile:
           type: RuntimeDefault
-  hostAliases:
-    - ip: "host-gateway"
-      hostnames:
-        - "host.docker.internal"
   restartPolicy: OnFailure
   volumes:
     - name: dyndns-https-volume
