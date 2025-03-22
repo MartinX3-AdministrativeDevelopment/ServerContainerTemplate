@@ -33,7 +33,7 @@ spec:
         seccompProfile:
           type: RuntimeDefault
     - name: https
-      image: ghcr.io/linuxserver/swag:3.3.0@sha256:1db2b03ce4bba3a935995325d7cc3c91afeca81f098f9fe1144e08e9e45bb584
+      image: ghcr.io/linuxserver/swag:3.3.0@sha256:04e06e5fa08390fcfa06a30180e9fbaaf48391c7c33eb64fe72dfc670960cc91
       imagePullPolicy: Always
       env:
         - name: DUCKDNSTOKEN
