@@ -5,8 +5,8 @@
     "config:best-practices"
   ],
   "kubernetes": {
-    "fileMatch": [
-      "^.*\\.yaml$"
+    "managerFilePatterns": [
+      "/^.*\\.yaml$/"
     ]
   },
   "lockFileMaintenance": {
