@@ -6,7 +6,7 @@ spec:
   automountServiceAccountToken: false
   containers:
     - name: dnsmasq
-      image: docker.io/4km3/dnsmasq:2.90-r3@sha256:89e9b6c9c39763e25359e720047b1424b7a96baa88241e23c0377942ee8e347c
+      image: docker.io/4km3/dnsmasq:2.90-r3@sha256:ca864812b7c2b0966f498a4f7c4509627df3cd735976124de7a35e1874f362d0
       imagePullPolicy: Always
       resources:
         limits:
