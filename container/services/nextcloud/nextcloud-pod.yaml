@@ -7,7 +7,7 @@ spec:
   restartPolicy: OnFailure
   containers:
     - name: app
-      image: lscr.io/linuxserver/nextcloud:31.0.8@sha256:8b581400560b31d277c2ac970c9a5d82aff49297b0ee08a30c1939daae0880f1
+      image: lscr.io/linuxserver/nextcloud:31.0.8@sha256:3c3a996203f25b3c1b9551dbfb8f4c4c8de8adc6d1d6fe77b164f30426d64d13
       imagePullPolicy: Always
       env:
         - name: APACHE_DISABLE_REWRITE_IP
