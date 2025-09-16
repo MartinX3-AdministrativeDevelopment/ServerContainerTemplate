@@ -7,7 +7,7 @@ spec:
   restartPolicy: OnFailure
   containers:
     - name: ssh
-      image: ghcr.io/shizunge/endlessh-go:latest@sha256:c2b17729ab588e95e757b54d2d0aeb20730eef27baa277cb270d960d1498d78f
+      image: ghcr.io/shizunge/endlessh-go:latest@sha256:fa2ef4677a5c356fcb97325c5496d3f97fe5c159f54342f175bfc492cc1608d1
       imagePullPolicy: Always
       args: [ "logtostderr", "v=1" ]
       ports:
