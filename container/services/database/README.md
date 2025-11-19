@@ -17,8 +17,7 @@ PostgreSQL database server
 1. Follow the [docs](https://www.postgresql.org/docs/current/app-initdb.html)
 2. Start the pod
    ```bash
-   podman kube play postgresql-pvc.yaml
-   podman kube play postgresql-secret.yaml
+   podman kube play postgresql-pvc.yaml postgresql-secret.yaml
    cp postgresql-pod.kube ~/.config/containers/systemd/
    systemctl --user daemon-reload
    systemctl --user start postgresql-pod.service

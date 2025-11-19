@@ -35,8 +35,7 @@ Nextcloud server, a safe home for all your data.
    ```
 4. Start the pod
    ```bash
-   podman kube play nextcloud-pvc.yaml
-   podman kube play nextcloud-secret.yaml
+   podman kube play nextcloud-pvc.yaml nextcloud-secret.yaml
    cp nextcloud-pod.kube ~/.config/containers/systemd/
    systemctl --user daemon-reload
    systemctl --user start nextcloud-pod.service

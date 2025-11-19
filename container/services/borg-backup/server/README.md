@@ -20,8 +20,7 @@ Deduplicating archiver with compression and authenticated encryption.
     - [Borg backup](https://borgbackup.readthedocs.io/en/stable/)
 2. Start the pod
    ```bash
-   podman kube play borg-backup-server-pvc.yaml
-   podman kube play borg-backup-server-secret.yaml
+   podman kube play borg-backup-server-pvc.yaml borg-backup-server-secret.yaml
    cp borg-backup-server-pod.kube ~/.config/containers/systemd/
    systemctl --user daemon-reload
    systemctl --user start borg-backup-server-pod.service

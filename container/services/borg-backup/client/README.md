@@ -22,8 +22,7 @@ No existing volumes will get created, but stay empty.
     - [Borgmatic](https://torsion.org/borgmatic/)
 2. Start the pod
    ```bash
-   podman kube play borg-backup-client-pvc.yaml
-   podman kube play borg-backup-client-secret.yaml
+   podman kube play borg-backup-client-pvc.yaml borg-backup-client-secret.yaml
    cp borg-backup-client-pod.kube ~/.config/containers/systemd/
    systemctl --user daemon-reload
    systemctl --user start borg-backup-client-pod.service

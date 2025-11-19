@@ -22,8 +22,7 @@ It also contains fail2ban for intrusion prevention.
 1. Follow the [docs](https://docs.linuxserver.io/general/swag)
 2. Start the pod
    ```bash
-   podman kube play dyndns-https-pvc.yaml
-   podman kube play dyndns-https-ip-secret.yaml
+   podman kube play dyndns-https-pvc.yaml dyndns-https-ip-secret.yaml
    cp dyndns-https-ip-pod.kube ~/.config/containers/systemd/
    systemctl --user daemon-reload
    systemctl --user start dyndns-https-ip-pod.service

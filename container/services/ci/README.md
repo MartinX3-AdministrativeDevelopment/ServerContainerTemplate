@@ -20,8 +20,7 @@ Drone uses a simple YAML build file to define and execute build pipelines inside
 2. [Setup https container](../dynds-https-ip/README.md)
 3. Start the pod
    ```bash
-   podman kube play ci-drone.io-pvc.yaml
-   podman kube play ci-drone.io-secret.yaml
+   podman kube play ci-drone.io-pvc.yaml ci-drone.io-secret.yaml
    cp ci-drone.io-pod.kube ~/.config/containers/systemd/
    systemctl --user daemon-reload
    systemctl --user start ci-drone.io-pod.service
