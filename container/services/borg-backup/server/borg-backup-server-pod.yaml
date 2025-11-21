@@ -7,7 +7,7 @@ spec:
   restartPolicy: OnFailure
   containers:
     - name: server
-      image: docker.io/horaceworblehat/borg-server:2.6@sha256:fdca603ed72de2a48e07b2a40149f66995820afb8b34458bca292a4b8328bf5a
+      image: docker.io/horaceworblehat/borg-server:2.6@sha256:c6a4bdc55a2fa7be6c1aed1f4d2ccd831e24ea9dea64424b0774e8ed577f592a
       imagePullPolicy: Always
       env:
         - name: BORG_AUTHORIZED_KEYS
