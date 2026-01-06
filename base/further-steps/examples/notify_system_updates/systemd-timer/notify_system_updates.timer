@@ -3,7 +3,7 @@
 Description=Updates the package database and pushes the result as email
 
 [Timer]
-OnCalendar=daily
+OnCalendar=*-*-* 4:00:00
 Persistent=true
 
 [Install]
