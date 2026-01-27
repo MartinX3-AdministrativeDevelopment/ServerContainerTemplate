@@ -7,7 +7,7 @@ spec:
   restartPolicy: OnFailure
   containers:
     - name: drone.io-runner
-      image: docker.io/drone/drone-runner-docker:1.8@sha256:9cbd70a393ebeb4f9eb5b4877bcf8b1be04fb42bdd174ded32c4d1d48da72a5e
+      image: docker.io/drone/drone-runner-docker:1.8@sha256:e92115f2613a15172fe64c4842a6a92e00c186d82ba22e9f9c4832eaabb21df2
       imagePullPolicy: Always
       env:
         - name: DRONE_RPC_HOST
