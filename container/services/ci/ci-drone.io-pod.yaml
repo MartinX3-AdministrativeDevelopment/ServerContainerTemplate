@@ -50,7 +50,7 @@ spec:
         - name: docker.sock-hostpath
           mountPath: /var/run/docker.sock
     - name: drone.io-server
-      image: docker.io/drone/drone:2.28@sha256:da02ea8fc5fcad7febe4533c6749c183b71028bc14c350ea3325fd47cd54145f
+      image: docker.io/drone/drone:2.28@sha256:d51c599034e84a3d865dff97f48929773ae441acb5b828abb993ddebfbc17ff9
       imagePullPolicy: Always
       env:
         - name: DRONE_GITHUB_CLIENT_ID
